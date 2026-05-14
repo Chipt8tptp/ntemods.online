@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mod教程与推荐 - 异环异闻带 | Nexus Hub</title>
+    <link rel="canonical" href="https://www.nte-hub.com/mods.html">
+    <style>
+        :root {
+            --bg: #f5f5f7;
+            --card-bg: #ffffff;
+            --text: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent: #0071e3;
+            --accent-hover: #0077ed;
+            --border: #d2d2d7;
+            --radius: 18px;
+            --shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", sans-serif;
+            background: var(--bg); color: var(--text); line-height:1.5;
+            min-height:100vh; display:flex; flex-direction:column;
+        }
+        a { text-decoration:none; color: var(--accent); }
+        .navbar {
+            display:flex; align-items:center; justify-content:space-between;
+            padding:1rem 2rem; background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(20px); border-bottom:1px solid var(--border);
+            position:sticky; top:0; z-index:100; flex-wrap:wrap; gap:1rem;
+        }
+        .logo { font-size:1.4rem; font-weight:700; color:var(--text); letter-spacing: -0.5px; }
+        .logo span { color: var(--accent); }
+        .nav-links { display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap; }
+        .nav-links a {
+            color:var(--text-secondary); font-weight:500; font-size:0.95rem;
+            padding:0.3rem 0; border-bottom:2px solid transparent;
+        }
+        .nav-links a:hover, .nav-links a.active { color:var(--text); border-bottom-color:var(--accent); }
+        .lang-btn {
+            background:var(--card-bg); border:1px solid var(--border);
+            padding:0.5rem 1.2rem; border-radius:30px; cursor:pointer;
+            font-weight:500; font-size:0.9rem; color:var(--text); display:flex; align-items:center; gap:0.3rem;
+            transition:0.2s;
+        }
+        .lang-btn:hover { border-color:var(--accent); color:var(--accent); }
+        .hero { text-align:center; padding:3rem 2rem; }
+        .hero h1 { font-size:2.5rem; font-weight:700; color:var(--text); margin-bottom:1rem; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { color:var(--text-secondary); font-size:1.2rem; max-width:600px; margin:0 auto 2rem; }
+        .btn {
+            background:var(--accent); color:#fff; border:none; padding:0.8rem 2.2rem;
+            border-radius:40px; font-weight:600; font-size:1rem; cursor:pointer;
+            display:inline-block; transition:0.2s;
+        }
+        .btn:hover { background:var(--accent-hover); }
+        .section { max-width:1100px; margin:0 auto 3rem; padding:0 1.5rem; }
+        .section-title {
+            font-size:1.8rem; font-weight:700; margin-bottom:1.5rem;
+            padding-left:1rem; border-left:4px solid var(--accent);
+        }
+        .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; }
+        .card {
+            background:var(--card-bg); border:1px solid var(--border);
+            border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow);
+        }
+        .card h3 { font-size:1.2rem; margin-bottom:0.5rem; }
+        .card p { color:var(--text-secondary); font-size:0.95rem; }
+        .tag {
+            background: var(--accent); color:#fff; font-size:0.7rem; font-weight:700;
+            padding:0.2rem 0.7rem; border-radius:20px; display:inline-block; margin-bottom:0.8rem;
+        }
+        footer {
+            margin-top:auto; text-align:center; padding:2rem;
+            border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem;
+        }
+        @media (max-width: 640px) {
+            .hero h1 { font-size:2rem; }
+            .navbar { padding:1rem; }
+            .nav-links { gap:0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">🔮 <span>异闻带</span> Nexus Hub</div>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="characters.html">角色</a>
+            <a href="map.html">地图</a>
+            <a href="mods.html" class="active">Mods</a>
+            <a href="download.html">下载</a>
+            <a href="about.html">关于</a>
+            <a href="search.html">🔍</a>
+        </div>
+        <button class="lang-btn" onclick="toggleLang()">🌐 <span id="langLabel">EN</span></button>
+    </nav>
+
+    <main>
+        <div id="zh-content">
+            <section class="hero">
+                <h1>🎨 <span>Mod工坊</span></h1>
+                <p>从安装教程到每周热门排行，一站式玩转NTE角色皮肤与服装Mod。</p>
+                <a href="https://www.nexusmods.com/nevernesstoeverness" class="btn" target="_blank">前往官方Mod平台下载</a>
+            </section>
+            <section class="section">
+                <h2 class="section-title">📥 安装教程</h2>
+                <div class="grid">
+                    <div class="card"><h3>第一步：下载加载工具</h3><p>安装 3Dmigoto 或 XXMI 模组加载器。</p></div>
+                    <div class="card"><h3>第二步：放置Mod文件</h3><p>将下载的 .pak 文件放入游戏目录下的 ~mods 文件夹。</p></div>
+                    <div class="card"><h3>第三步：启动游戏</h3><p>先运行加载器，再启动NTE，按 F10 刷新Mod效果。</p></div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">🔥 本周热门Mod排行榜</h2>
+                <div class="grid">
+                    <div class="card"><span class="tag">TOP1</span><h3>薄荷长发物理优化</h3><p>下载量 1.2w · 发丝飘动更自然</p></div>
+                    <div class="card"><span class="tag">TOP2</span><h3>娜娜莉都市时装</h3><p>替换初始皮肤为时尚夜行装</p></div>
+                    <div class="card"><span class="tag">TOP3</span><h3>白藏·武士铠甲</h3><p>日式铠甲风格外观</p></div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">❓ 常见问题</h2>
+                <div class="grid">
+                    <div class="card"><h3>Mod安装后无效？</h3><p>请检查加载器版本是否匹配，并确认Mod文件路径正确。</p></div>
+                    <div class="card"><h3>Mod会导致封号吗？</h3><p>仅替换本地模型文件，不涉及数据篡改，目前无封号风险。</p></div>
+                </div>
+            </section>
+        </div>
+        <div id="en-content" style="display:none;">
+            <section class="hero">
+                <h1>🎨 <span>Mod Workshop</span></h1>
+                <p>From install guides to weekly trending mods – all you need for NTE skins and outfits.</p>
+                <a href="https://www.nexusmods.com/nevernesstoeverness" class="btn" target="_blank">Visit Official Mod Platform</a>
+            </section>
+            <section class="section">
+                <h2 class="section-title">📥 Installation Guide</h2>
+                <div class="grid">
+                    <div class="card"><h3>Step 1: Get a Loader</h3><p>Install 3Dmigoto or XXMI mod loader.</p></div>
+                    <div class="card"><h3>Step 2: Place Mod Files</h3><p>Put the .pak files into the ~mods folder inside the game directory.</p></div>
+                    <div class="card"><h3>Step 3: Launch the Game</h3><p>Run the loader first, then start NTE; press F10 to refresh.</p></div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">🔥 Weekly Trending Mods</h2>
+                <div class="grid">
+                    <div class="card"><span class="tag">TOP1</span><h3>Mint Long Hair Physics</h3><p>12k downloads · more natural hair flow</p></div>
+                    <div class="card"><span class="tag">TOP2</span><h3>Nanally Urban Outfit</h3><p>Replaces default skin with a stylish night look</p></div>
+                    <div class="card"><span class="tag">TOP3</span><h3>Shirakura Samurai Armor</h3><p>Japanese‑style armor outfit</p></div>
+                </div>
+            </section>
+            <section class="section">
+                <h2 class="section-title">❓ FAQ</h2>
+                <div class="grid">
+                    <div class="card"><h3>Mod not working?</h3><p>Ensure the loader version matches and the Mod path is correct.</p></div>
+                    <div class="card"><h3>Will using Mods get me banned?</h3><p>Mods only replace local files; no data tampering, currently no ban risk.</p></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 异环异闻带 | Nexus Hub. 游戏版权归 Hotta Studio / Perfect World 所有。</p>
+        <p>This site is a fan project and is not affiliated with NTE officials.</p>
+    </footer>
+
+    <script>
+        function toggleLang() {
+            const zh = document.getElementById('zh-content');
+            const en = document.getElementById('en-content');
+            const label = document.getElementById('langLabel');
+            if (zh.style.display === 'none') {
+                zh.style.display = 'block';
+                en.style.display = 'none';
+                label.textContent = 'EN';
+            } else {
+                zh.style.display = 'none';
+                en.style.display = 'block';
+                label.textContent = '中';
+            }
+            const navMap = {
+                home: { zh: '首页', en: 'Home' },
+                characters: { zh: '角色', en: 'Characters' },
+                map: { zh: '地图', en: 'Map' },
+                mods: { zh: 'Mods', en: 'Mods' },
+                download: { zh: '下载', en: 'Download' },
+                about: { zh: '关于', en: 'About' },
+                search: { zh: '🔍', en: '🔍' }
+            };
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                const href = link.getAttribute('href');
+                let page = href.replace('.html','');
+                if (page === 'index') page = 'home';
+                if (navMap[page]) {
+                    link.textContent = zh.style.display !== 'none' ? navMap[page].zh : navMap[page].en;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
