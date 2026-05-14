@@ -3,85 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全收集地图与工具 - 异环异闻带 | Nexus Hub</title>
+    <title>全收集地图与探索攻略 - 异环异闻带</title>
     <link rel="canonical" href="https://www.nte-hub.com/map.html">
     <style>
-        /* 与 characters.html 完全一致的 CSS */
-        :root {
-            --bg: #f5f5f7;
-            --card-bg: #ffffff;
-            --text: #1d1d1f;
-            --text-secondary: #86868b;
-            --accent: #0071e3;
-            --accent-hover: #0077ed;
-            --border: #d2d2d7;
-            --radius: 18px;
-            --shadow: 0 2px 12px rgba(0,0,0,0.04);
-        }
+        :root { --bg: #f5f5f7; --card-bg: #ffffff; --text: #1d1d1f; --text-secondary: #86868b; --accent: #0071e3; --accent-hover: #0077ed; --border: #d2d2d7; --radius: 18px; --shadow: 0 2px 12px rgba(0,0,0,0.04); }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", sans-serif;
-            background: var(--bg); color: var(--text); line-height:1.5;
-            min-height:100vh; display:flex; flex-direction:column;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", sans-serif; background: var(--bg); color: var(--text); line-height:1.5; min-height:100vh; display:flex; flex-direction:column; }
         a { text-decoration:none; color: var(--accent); }
-        .navbar {
-            display:flex; align-items:center; justify-content:space-between;
-            padding:1rem 2rem; background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(20px); border-bottom:1px solid var(--border);
-            position:sticky; top:0; z-index:100; flex-wrap:wrap; gap:1rem;
-        }
-        .logo {
-            font-size:1.4rem; font-weight:700; color:var(--text);
-            letter-spacing: -0.5px;
-        }
+        .navbar { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; flex-wrap:wrap; gap:1rem; }
+        .logo { font-size:1.4rem; font-weight:700; color:var(--text); letter-spacing: -0.5px; }
         .logo span { color: var(--accent); }
         .nav-links { display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap; }
-        .nav-links a {
-            color:var(--text-secondary); font-weight:500; font-size:0.95rem;
-            padding:0.3rem 0; border-bottom:2px solid transparent;
-        }
+        .nav-links a { color:var(--text-secondary); font-weight:500; font-size:0.95rem; padding:0.3rem 0; border-bottom:2px solid transparent; transition:0.2s; }
         .nav-links a:hover, .nav-links a.active { color:var(--text); border-bottom-color:var(--accent); }
-        .lang-btn {
-            background:var(--card-bg); border:1px solid var(--border);
-            padding:0.5rem 1.2rem; border-radius:30px; cursor:pointer;
-            font-weight:500; font-size:0.9rem; color:var(--text); display:flex; align-items:center; gap:0.3rem;
-            transition:0.2s;
-        }
+        .lang-btn { background:var(--card-bg); border:1px solid var(--border); padding:0.5rem 1.2rem; border-radius:30px; cursor:pointer; font-weight:500; font-size:0.9rem; color:var(--text); display:flex; align-items:center; gap:0.3rem; transition:0.2s; }
         .lang-btn:hover { border-color:var(--accent); color:var(--accent); }
-        .hero {
-            text-align:center; padding:3rem 2rem;
-        }
+        .hero { text-align:center; padding:3rem 2rem; }
         .hero h1 { font-size:2.5rem; font-weight:700; color:var(--text); margin-bottom:1rem; }
         .hero h1 span { color: var(--accent); }
         .hero p { color:var(--text-secondary); font-size:1.2rem; max-width:600px; margin:0 auto; }
         .section { max-width:1100px; margin:0 auto 3rem; padding:0 1.5rem; }
-        .section-title {
-            font-size:1.8rem; font-weight:700; margin-bottom:1.5rem;
-            padding-left:1rem; border-left:4px solid var(--accent);
-        }
+        .section-title { font-size:1.8rem; font-weight:700; margin-bottom:1.5rem; padding-left:1rem; border-left:4px solid var(--accent); }
         .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; }
-        .card {
-            background:var(--card-bg); border:1px solid var(--border);
-            border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow);
-        }
+        .card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow); transition:0.2s; }
+        .card:hover { border-color:var(--accent); transform:translateY(-2px); }
         .card h3 { font-size:1.2rem; margin-bottom:0.5rem; }
         .card p { color:var(--text-secondary); font-size:0.95rem; }
-        footer {
-            margin-top:auto; text-align:center; padding:2rem;
-            border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem;
-        }
-        @media (max-width: 640px) {
-            .hero h1 { font-size:2rem; }
-            .navbar { padding:1rem; }
-            .nav-links { gap:0.8rem; }
-        }
+        .btn { background:var(--accent); color:#fff; border:none; padding:0.8rem 2rem; border-radius:40px; font-weight:600; font-size:0.95rem; cursor:pointer; display:inline-block; transition:0.2s; }
+        .btn:hover { background:var(--accent-hover); }
+        footer { margin-top:auto; text-align:center; padding:2rem; border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem; }
+        @media (max-width: 640px) { .hero h1 { font-size:2rem; } .navbar { padding:1rem; } .nav-links { gap:0.8rem; } }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">🔮 <span>异闻带</span> Nexus Hub</div>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="index.html">首页</a>
             <a href="characters.html">角色</a>
             <a href="map.html" class="active">地图</a>
@@ -96,34 +53,52 @@
     <main>
         <div id="zh-content">
             <section class="hero">
-                <h1>🗺️ <span>全收集地图</span> & 资源工具</h1>
-                <p>海特洛市、新赫兰德区全宝箱、异象、任务点一图标注。</p>
+                <h1>🗺️ <span>全收集地图</span> & 探索攻略</h1>
+                <p>海特洛市五大区域全宝箱、谕石、异象点位一图标注。</p>
             </section>
             <section class="section">
-                <div class="card" style="text-align:center; padding:3rem;">
-                    <h2>互动地图（即将接入）</h2>
-                    <p>目前可前往 <a href="https://map.gamersky.com/nte" target="_blank">游民星空互动地图</a> 或官方渠道查看。</p>
+                <h2 class="section-title">📍 五大区域收集指南</h2>
+                <div class="grid">
+                    <div class="card"><h3>桥间地</h3><p>63个收集点 + 1个异象委托（铁驭强袭，可获S级弧盘）</p></div>
+                    <div class="card"><h3>绘空町</h3><p>84个收集点 + 2个异象委托（含恐怖元素）</p></div>
+                    <div class="card"><h3>米格尔区</h3><p>77个收集点，纯收集区域，注意垂直高度差</p></div>
+                    <div class="card"><h3>未闻浦</h3><p>43个收集点，最容易100%完成的区域</p></div>
+                    <div class="card"><h3>新赫兰德区</h3><p>90个收集点，体量最大，建议分次完成</p></div>
                 </div>
+                <p style="margin-top:1.5rem; text-align:center;">📊 总计约 <strong>357个收集点 + 3个异象委托</strong>，建议按桥间地→未闻浦→米格尔区→绘空町→新赫兰德区顺序由易到难完成</p>
             </section>
             <section class="section">
-                <h2 class="section-title">🎲 抽卡模拟器</h2>
-                <p style="color:var(--text-secondary);">测试你的欧气，模拟NTE抽卡概率（工具开发中，敬请期待）。</p>
+                <h2 class="section-title">🔗 推荐工具</h2>
+                <div class="card" style="text-align:center;">
+                    <h3>游民星空互动地图</h3>
+                    <p>覆盖所有谕石、赠礼、异象委托等核心点位，可实时查询和标记</p>
+                    <a href="https://www.gamersky.com/tools/map/nte/" class="btn" target="_blank">前往互动地图</a>
+                </div>
             </section>
         </div>
         <div id="en-content" style="display:none;">
             <section class="hero">
-                <h1>🗺️ <span>Full Map</span> & Tools</h1>
-                <p>All treasure chests, anomalies, and quest markers for Hethereau & New Herland.</p>
+                <h1>🗺️ <span>Full Map</span> & Exploration Guide</h1>
+                <p>All treasure chests, oracle stones, and anomaly markers across Hethereau's five districts.</p>
             </section>
             <section class="section">
-                <div class="card" style="text-align:center; padding:3rem;">
-                    <h2>Interactive Map (Coming Soon)</h2>
-                    <p>For now, visit the <a href="https://map.gamersky.com/nte" target="_blank">Gamersky interactive map</a> or official sources.</p>
+                <h2 class="section-title">📍 Five District Collection Guide</h2>
+                <div class="grid">
+                    <div class="card"><h3>Bridge District</h3><p>63 collectibles + 1 anomaly quest (Iron Cavalry Assault, S-rank arc disc)</p></div>
+                    <div class="card"><h3>Sketch Town</h3><p>84 collectibles + 2 anomaly quests (horror elements)</p></div>
+                    <div class="card"><h3>Miguel District</h3><p>77 collectibles, pure collection zone, watch for verticality</p></div>
+                    <div class="card"><h3>Mimimi Street</h3><p>43 collectibles, easiest to 100%</p></div>
+                    <div class="card"><h3>New Herland</h3><p>90 collectibles, largest area, split into sessions</p></div>
                 </div>
+                <p style="margin-top:1.5rem; text-align:center;">📊 Total ~<strong>357 collectibles + 3 anomaly quests</strong>. Suggested order: Bridge→Mimimi→Miguel→Sketch→New Herland.</p>
             </section>
             <section class="section">
-                <h2 class="section-title">🎲 Gacha Simulator</h2>
-                <p style="color:var(--text-secondary);">Test your luck with NTE pull rates (tool in development, stay tuned).</p>
+                <h2 class="section-title">🔗 Recommended Tools</h2>
+                <div class="card" style="text-align:center;">
+                    <h3>Gamersky Interactive Map</h3>
+                    <p>Covers all oracle stones, gifts, and anomaly quest markers with real-time tracking.</p>
+                    <a href="https://www.gamersky.com/tools/map/nte/" class="btn" target="_blank">Open Map</a>
+                </div>
             </section>
         </div>
     </main>
@@ -139,30 +114,16 @@
             const en = document.getElementById('en-content');
             const label = document.getElementById('langLabel');
             if (zh.style.display === 'none') {
-                zh.style.display = 'block';
-                en.style.display = 'none';
-                label.textContent = 'EN';
+                zh.style.display = 'block'; en.style.display = 'none'; label.textContent = 'EN';
             } else {
-                zh.style.display = 'none';
-                en.style.display = 'block';
-                label.textContent = '中';
+                zh.style.display = 'none'; en.style.display = 'block'; label.textContent = '中';
             }
-            const navMap = {
-                home: { zh: '首页', en: 'Home' },
-                characters: { zh: '角色', en: 'Characters' },
-                map: { zh: '地图', en: 'Map' },
-                mods: { zh: 'Mods', en: 'Mods' },
-                download: { zh: '下载', en: 'Download' },
-                about: { zh: '关于', en: 'About' },
-                search: { zh: '🔍', en: '🔍' }
-            };
+            const navMap = { home: { zh: '首页', en: 'Home' }, characters: { zh: '角色', en: 'Characters' }, map: { zh: '地图', en: 'Map' }, mods: { zh: 'Mods', en: 'Mods' }, download: { zh: '下载', en: 'Download' }, about: { zh: '关于', en: 'About' }, search: { zh: '🔍', en: '🔍' } };
             document.querySelectorAll('.nav-links a').forEach(link => {
                 const href = link.getAttribute('href');
                 let page = href.replace('.html','');
                 if (page === 'index') page = 'home';
-                if (navMap[page]) {
-                    link.textContent = zh.style.display !== 'none' ? navMap[page].zh : navMap[page].en;
-                }
+                if (navMap[page]) link.textContent = zh.style.display !== 'none' ? navMap[page].zh : navMap[page].en;
             });
         }
     </script>

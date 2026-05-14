@@ -3,84 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>内容搜索 - 异环异闻带 | Nexus Hub</title>
+    <title>内容搜索 - 异环异闻带</title>
     <link rel="canonical" href="https://www.nte-hub.com/search.html">
     <style>
-        :root {
-            --bg: #f5f5f7;
-            --card-bg: #ffffff;
-            --text: #1d1d1f;
-            --text-secondary: #86868b;
-            --accent: #0071e3;
-            --accent-hover: #0077ed;
-            --border: #d2d2d7;
-            --radius: 18px;
-            --shadow: 0 2px 12px rgba(0,0,0,0.04);
-        }
+        :root { --bg: #f5f5f7; --card-bg: #ffffff; --text: #1d1d1f; --text-secondary: #86868b; --accent: #0071e3; --accent-hover: #0077ed; --border: #d2d2d7; --radius: 18px; --shadow: 0 2px 12px rgba(0,0,0,0.04); }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", sans-serif;
-            background: var(--bg); color: var(--text); line-height:1.5;
-            min-height:100vh; display:flex; flex-direction:column;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", sans-serif; background: var(--bg); color: var(--text); line-height:1.5; min-height:100vh; display:flex; flex-direction:column; }
         a { text-decoration:none; color: var(--accent); }
-        .navbar {
-            display:flex; align-items:center; justify-content:space-between;
-            padding:1rem 2rem; background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(20px); border-bottom:1px solid var(--border);
-            position:sticky; top:0; z-index:100; flex-wrap:wrap; gap:1rem;
-        }
+        .navbar { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; flex-wrap:wrap; gap:1rem; }
         .logo { font-size:1.4rem; font-weight:700; color:var(--text); letter-spacing: -0.5px; }
         .logo span { color: var(--accent); }
         .nav-links { display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap; }
-        .nav-links a {
-            color:var(--text-secondary); font-weight:500; font-size:0.95rem;
-            padding:0.3rem 0; border-bottom:2px solid transparent;
-        }
+        .nav-links a { color:var(--text-secondary); font-weight:500; font-size:0.95rem; padding:0.3rem 0; border-bottom:2px solid transparent; transition:0.2s; }
         .nav-links a:hover, .nav-links a.active { color:var(--text); border-bottom-color:var(--accent); }
-        .lang-btn {
-            background:var(--card-bg); border:1px solid var(--border);
-            padding:0.5rem 1.2rem; border-radius:30px; cursor:pointer;
-            font-weight:500; font-size:0.9rem; color:var(--text); display:flex; align-items:center; gap:0.3rem;
-            transition:0.2s;
-        }
+        .lang-btn { background:var(--card-bg); border:1px solid var(--border); padding:0.5rem 1.2rem; border-radius:30px; cursor:pointer; font-weight:500; font-size:0.9rem; color:var(--text); display:flex; align-items:center; gap:0.3rem; transition:0.2s; }
         .lang-btn:hover { border-color:var(--accent); color:var(--accent); }
         .hero { text-align:center; padding:3rem 2rem; }
         .hero h1 { font-size:2.5rem; font-weight:700; color:var(--text); margin-bottom:1rem; }
         .hero h1 span { color: var(--accent); }
         .hero p { color:var(--text-secondary); font-size:1.2rem; max-width:600px; margin:0 auto 2rem; }
         .search-box { max-width:500px; margin:0 auto; }
-        .search-box input {
-            width:100%; padding:0.9rem 1.5rem; border:1px solid var(--border); border-radius:40px;
-            font-size:1rem; background:var(--card-bg); outline:none; transition:0.2s;
-        }
+        .search-box input { width:100%; padding:0.9rem 1.5rem; border:1px solid var(--border); border-radius:40px; font-size:1rem; background:var(--card-bg); outline:none; transition:0.2s; }
         .search-box input:focus { border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,113,227,0.15); }
         .section { max-width:1100px; margin:0 auto 3rem; padding:0 1.5rem; }
-        .section-title {
-            font-size:1.8rem; font-weight:700; margin-bottom:1.5rem;
-            padding-left:1rem; border-left:4px solid var(--accent);
-        }
+        .section-title { font-size:1.8rem; font-weight:700; margin-bottom:1.5rem; padding-left:1rem; border-left:4px solid var(--accent); }
         .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1.5rem; }
-        .card {
-            background:var(--card-bg); border:1px solid var(--border);
-            border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow); text-align:center;
-        }
+        .card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow); text-align:center; transition:0.2s; }
+        .card:hover { border-color:var(--accent); transform:translateY(-2px); }
         .card h3 { font-size:1.1rem; }
-        footer {
-            margin-top:auto; text-align:center; padding:2rem;
-            border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem;
-        }
-        @media (max-width: 640px) {
-            .hero h1 { font-size:2rem; }
-            .navbar { padding:1rem; }
-            .nav-links { gap:0.8rem; }
-        }
+        footer { margin-top:auto; text-align:center; padding:2rem; border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem; }
+        @media (max-width: 640px) { .hero h1 { font-size:2rem; } .navbar { padding:1rem; } .nav-links { gap:0.8rem; } }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">🔮 <span>异闻带</span> Nexus Hub</div>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="index.html">首页</a>
             <a href="characters.html">角色</a>
             <a href="map.html">地图</a>
@@ -98,7 +56,7 @@
                 <h1>🔍 <span>全站搜索</span></h1>
                 <p>快速查找角色攻略、地图点位、Mod教程。</p>
                 <div class="search-box">
-                    <input type="text" placeholder="例如：娜娜莉 配队、Mod安装、地图全收集" onkeydown="if(event.key==='Enter') alert('搜索功能开发中')">
+                    <input type="text" placeholder="例如：娜娜莉 配队、Mod安装、地图全收集" onkeydown="if(event.key==='Enter') alert('搜索功能开发中，请使用导航浏览内容')">
                 </div>
             </section>
             <section class="section">
@@ -106,9 +64,12 @@
                 <div class="grid">
                     <div class="card"><h3>角色强度榜</h3></div>
                     <div class="card"><h3>娜娜莉配队</h3></div>
+                    <div class="card"><h3>小吱值得练吗</h3></div>
                     <div class="card"><h3>Mod安装教程</h3></div>
                     <div class="card"><h3>地图全收集</h3></div>
                     <div class="card"><h3>新手攻略</h3></div>
+                    <div class="card"><h3>弧盘搭配</h3></div>
+                    <div class="card"><h3>异环兑换码</h3></div>
                 </div>
             </section>
         </div>
@@ -117,7 +78,7 @@
                 <h1>🔍 <span>Site Search</span></h1>
                 <p>Find character guides, map locations, and mod tutorials.</p>
                 <div class="search-box">
-                    <input type="text" placeholder="e.g. Nanally build, mod install, full map" onkeydown="if(event.key==='Enter') alert('Search is under development')">
+                    <input type="text" placeholder="e.g. Nanally build, mod install, full map" onkeydown="if(event.key==='Enter') alert('Search is under development. Please use navigation to browse.')">
                 </div>
             </section>
             <section class="section">
@@ -125,9 +86,12 @@
                 <div class="grid">
                     <div class="card"><h3>Tier List</h3></div>
                     <div class="card"><h3>Nanally Team</h3></div>
+                    <div class="card"><h3>Is Xiaozhi Worth It?</h3></div>
                     <div class="card"><h3>Mod Install Guide</h3></div>
                     <div class="card"><h3>Full Map</h3></div>
                     <div class="card"><h3>Beginner Guide</h3></div>
+                    <div class="card"><h3>Arc Disc Builds</h3></div>
+                    <div class="card"><h3>NTE Codes</h3></div>
                 </div>
             </section>
         </div>
@@ -144,30 +108,16 @@
             const en = document.getElementById('en-content');
             const label = document.getElementById('langLabel');
             if (zh.style.display === 'none') {
-                zh.style.display = 'block';
-                en.style.display = 'none';
-                label.textContent = 'EN';
+                zh.style.display = 'block'; en.style.display = 'none'; label.textContent = 'EN';
             } else {
-                zh.style.display = 'none';
-                en.style.display = 'block';
-                label.textContent = '中';
+                zh.style.display = 'none'; en.style.display = 'block'; label.textContent = '中';
             }
-            const navMap = {
-                home: { zh: '首页', en: 'Home' },
-                characters: { zh: '角色', en: 'Characters' },
-                map: { zh: '地图', en: 'Map' },
-                mods: { zh: 'Mods', en: 'Mods' },
-                download: { zh: '下载', en: 'Download' },
-                about: { zh: '关于', en: 'About' },
-                search: { zh: '🔍', en: '🔍' }
-            };
+            const navMap = { home: { zh: '首页', en: 'Home' }, characters: { zh: '角色', en: 'Characters' }, map: { zh: '地图', en: 'Map' }, mods: { zh: 'Mods', en: 'Mods' }, download: { zh: '下载', en: 'Download' }, about: { zh: '关于', en: 'About' }, search: { zh: '🔍', en: '🔍' } };
             document.querySelectorAll('.nav-links a').forEach(link => {
                 const href = link.getAttribute('href');
                 let page = href.replace('.html','');
                 if (page === 'index') page = 'home';
-                if (navMap[page]) {
-                    link.textContent = zh.style.display !== 'none' ? navMap[page].zh : navMap[page].en;
-                }
+                if (navMap[page]) link.textContent = zh.style.display !== 'none' ? navMap[page].zh : navMap[page].en;
             });
         }
     </script>

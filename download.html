@@ -3,81 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>官方下载与新手导航 - 异环异闻带 | Nexus Hub</title>
+    <title>官方下载与入门导航 - 异环异闻带</title>
     <link rel="canonical" href="https://www.nte-hub.com/download.html">
     <style>
-        :root {
-            --bg: #f5f5f7;
-            --card-bg: #ffffff;
-            --text: #1d1d1f;
-            --text-secondary: #86868b;
-            --accent: #0071e3;
-            --accent-hover: #0077ed;
-            --border: #d2d2d7;
-            --radius: 18px;
-            --shadow: 0 2px 12px rgba(0,0,0,0.04);
-        }
+        :root { --bg: #f5f5f7; --card-bg: #ffffff; --text: #1d1d1f; --text-secondary: #86868b; --accent: #0071e3; --accent-hover: #0077ed; --border: #d2d2d7; --radius: 18px; --shadow: 0 2px 12px rgba(0,0,0,0.04); }
         * { margin:0; padding:0; box-sizing:border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", sans-serif;
-            background: var(--bg); color: var(--text); line-height:1.5;
-            min-height:100vh; display:flex; flex-direction:column;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", sans-serif; background: var(--bg); color: var(--text); line-height:1.5; min-height:100vh; display:flex; flex-direction:column; }
         a { text-decoration:none; color: var(--accent); }
-        .navbar {
-            display:flex; align-items:center; justify-content:space-between;
-            padding:1rem 2rem; background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(20px); border-bottom:1px solid var(--border);
-            position:sticky; top:0; z-index:100; flex-wrap:wrap; gap:1rem;
-        }
+        .navbar { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; flex-wrap:wrap; gap:1rem; }
         .logo { font-size:1.4rem; font-weight:700; color:var(--text); letter-spacing: -0.5px; }
         .logo span { color: var(--accent); }
         .nav-links { display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap; }
-        .nav-links a {
-            color:var(--text-secondary); font-weight:500; font-size:0.95rem;
-            padding:0.3rem 0; border-bottom:2px solid transparent;
-        }
+        .nav-links a { color:var(--text-secondary); font-weight:500; font-size:0.95rem; padding:0.3rem 0; border-bottom:2px solid transparent; transition:0.2s; }
         .nav-links a:hover, .nav-links a.active { color:var(--text); border-bottom-color:var(--accent); }
-        .lang-btn {
-            background:var(--card-bg); border:1px solid var(--border);
-            padding:0.5rem 1.2rem; border-radius:30px; cursor:pointer;
-            font-weight:500; font-size:0.9rem; color:var(--text); display:flex; align-items:center; gap:0.3rem;
-            transition:0.2s;
-        }
+        .lang-btn { background:var(--card-bg); border:1px solid var(--border); padding:0.5rem 1.2rem; border-radius:30px; cursor:pointer; font-weight:500; font-size:0.9rem; color:var(--text); display:flex; align-items:center; gap:0.3rem; transition:0.2s; }
         .lang-btn:hover { border-color:var(--accent); color:var(--accent); }
         .hero { text-align:center; padding:3rem 2rem; }
         .hero h1 { font-size:2.5rem; font-weight:700; color:var(--text); margin-bottom:1rem; }
         .hero h1 span { color: var(--accent); }
         .hero p { color:var(--text-secondary); font-size:1.2rem; max-width:600px; margin:0 auto; }
-        .btn {
-            background:var(--accent); color:#fff; border:none; padding:0.8rem 2.2rem;
-            border-radius:40px; font-weight:600; font-size:1rem; cursor:pointer;
-            display:inline-block; transition:0.2s; margin-top:1rem;
-        }
-        .btn:hover { background:var(--accent-hover); }
         .section { max-width:1100px; margin:0 auto 3rem; padding:0 1.5rem; }
+        .section-title { font-size:1.8rem; font-weight:700; margin-bottom:1.5rem; padding-left:1rem; border-left:4px solid var(--accent); }
         .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem; }
-        .card {
-            background:var(--card-bg); border:1px solid var(--border);
-            border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow); text-align:center;
-        }
+        .card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow); text-align:center; transition:0.2s; }
+        .card:hover { border-color:var(--accent); transform:translateY(-2px); }
         .card h3 { font-size:1.2rem; margin-bottom:0.5rem; }
         .card p { color:var(--text-secondary); font-size:0.95rem; margin-bottom:1rem; }
-        footer {
-            margin-top:auto; text-align:center; padding:2rem;
-            border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem;
-        }
-        @media (max-width: 640px) {
-            .hero h1 { font-size:2rem; }
-            .navbar { padding:1rem; }
-            .nav-links { gap:0.8rem; }
-        }
+        .btn { background:var(--accent); color:#fff; border:none; padding:0.7rem 1.8rem; border-radius:40px; font-weight:600; font-size:0.9rem; cursor:pointer; display:inline-block; transition:0.2s; margin-top:0.5rem; }
+        .btn:hover { background:var(--accent-hover); }
+        footer { margin-top:auto; text-align:center; padding:2rem; border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem; }
+        @media (max-width: 640px) { .hero h1 { font-size:2rem; } .navbar { padding:1rem; } .nav-links { gap:0.8rem; } }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">🔮 <span>异闻带</span> Nexus Hub</div>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="index.html">首页</a>
             <a href="characters.html">角色</a>
             <a href="map.html">地图</a>
@@ -92,43 +53,45 @@
     <main>
         <div id="zh-content">
             <section class="hero">
-                <h1>📥 <span>官方下载</span> 与入门导航</h1>
-                <p>PC / iOS / Android / PS5 全平台官方入口，及新手必备百科。</p>
+                <h1>📥 <span>官方下载</span> & 新手入门</h1>
+                <p>PC / iOS / Android / PS5 / Mac 全平台官方入口。游戏采用虚幻引擎5打造，PC端推荐RTX 3060及以上显卡。</p>
             </section>
             <section class="section">
+                <h2 class="section-title">🎮 全平台下载</h2>
                 <div class="grid">
-                    <div class="card"><h3>Windows</h3><p>PC 客户端</p><a href="https://nte.perfectworld.com/" class="btn" target="_blank">官网下载</a></div>
-                    <div class="card"><h3>iOS</h3><p>App Store</p><a href="#" class="btn">App Store</a></div>
-                    <div class="card"><h3>Android</h3><p>Google Play / 官网APK</p><a href="#" class="btn">下载</a></div>
-                    <div class="card"><h3>PS5</h3><p>PlayStation Store</p><a href="#" class="btn">下载</a></div>
+                    <div class="card"><h3>🖥️ Windows</h3><p>PC客户端（推荐）</p><a href="https://nte.perfectworld.com/" class="btn" target="_blank">官网下载</a></div>
+                    <div class="card"><h3>📱 iOS</h3><p>App Store</p><a href="#" class="btn">App Store</a></div>
+                    <div class="card"><h3>🤖 Android</h3><p>Google Play / 官网APK</p><a href="#" class="btn">下载</a></div>
+                    <div class="card"><h3>🎮 PS5</h3><p>PlayStation Store</p><a href="#" class="btn">PS Store</a></div>
                 </div>
             </section>
             <section class="section">
-                <h2 class="section-title" style="margin-top:2rem;">📖 新手百科</h2>
+                <h2 class="section-title">📖 新手百科</h2>
                 <div class="grid">
-                    <div class="card"><h3>世界观介绍</h3><p>了解海特洛市的异象与势力。</p></div>
-                    <div class="card"><h3>基础操作指南</h3><p>移动、战斗、探索机制说明。</p></div>
+                    <div class="card"><h3>世界观介绍</h3><p>海特洛市的异象与势力，作为首位“无证上岗”的异象猎人展开冒险</p></div>
+                    <div class="card"><h3>基础操作指南</h3><p>移动、战斗、载具驾驶、房产经营等核心机制</p></div>
                 </div>
             </section>
         </div>
         <div id="en-content" style="display:none;">
             <section class="hero">
-                <h1>📥 <span>Official Download</span> & Starter Guide</h1>
-                <p>All platforms: PC, iOS, Android, PS5. Plus essential wiki for beginners.</p>
+                <h1>📥 <span>Official Download</span> & Beginner Guide</h1>
+                <p>All platforms: PC, iOS, Android, PS5, Mac. Built on Unreal Engine 5. Recommended GPU: RTX 3060+.</p>
             </section>
             <section class="section">
+                <h2 class="section-title">🎮 All Platforms</h2>
                 <div class="grid">
-                    <div class="card"><h3>Windows</h3><p>PC Client</p><a href="https://nte.perfectworld.com/" class="btn" target="_blank">Official Site</a></div>
-                    <div class="card"><h3>iOS</h3><p>App Store</p><a href="#" class="btn">App Store</a></div>
-                    <div class="card"><h3>Android</h3><p>Google Play / APK</p><a href="#" class="btn">Download</a></div>
-                    <div class="card"><h3>PS5</h3><p>PlayStation Store</p><a href="#" class="btn">Download</a></div>
+                    <div class="card"><h3>🖥️ Windows</h3><p>PC Client (Recommended)</p><a href="https://nte.perfectworld.com/" class="btn" target="_blank">Official Site</a></div>
+                    <div class="card"><h3>📱 iOS</h3><p>App Store</p><a href="#" class="btn">App Store</a></div>
+                    <div class="card"><h3>🤖 Android</h3><p>Google Play / APK</p><a href="#" class="btn">Download</a></div>
+                    <div class="card"><h3>🎮 PS5</h3><p>PlayStation Store</p><a href="#" class="btn">PS Store</a></div>
                 </div>
             </section>
             <section class="section">
-                <h2 class="section-title" style="margin-top:2rem;">📖 Beginner Wiki</h2>
+                <h2 class="section-title">📖 Beginner Wiki</h2>
                 <div class="grid">
-                    <div class="card"><h3>World Lore</h3><p>Discover Hethereau's anomalies and factions.</p></div>
-                    <div class="card"><h3>Basic Controls</h3><p>Movement, combat, and exploration mechanics.</p></div>
+                    <div class="card"><h3>World Lore</h3><p>Explore Hethereau's anomalies and factions as an unlicensed anomaly hunter</p></div>
+                    <div class="card"><h3>Basic Controls</h3><p>Movement, combat, vehicle driving, property management</p></div>
                 </div>
             </section>
         </div>
@@ -145,30 +108,16 @@
             const en = document.getElementById('en-content');
             const label = document.getElementById('langLabel');
             if (zh.style.display === 'none') {
-                zh.style.display = 'block';
-                en.style.display = 'none';
-                label.textContent = 'EN';
+                zh.style.display = 'block'; en.style.display = 'none'; label.textContent = 'EN';
             } else {
-                zh.style.display = 'none';
-                en.style.display = 'block';
-                label.textContent = '中';
+                zh.style.display = 'none'; en.style.display = 'block'; label.textContent = '中';
             }
-            const navMap = {
-                home: { zh: '首页', en: 'Home' },
-                characters: { zh: '角色', en: 'Characters' },
-                map: { zh: '地图', en: 'Map' },
-                mods: { zh: 'Mods', en: 'Mods' },
-                download: { zh: '下载', en: 'Download' },
-                about: { zh: '关于', en: 'About' },
-                search: { zh: '🔍', en: '🔍' }
-            };
+            const navMap = { home: { zh: '首页', en: 'Home' }, characters: { zh: '角色', en: 'Characters' }, map: { zh: '地图', en: 'Map' }, mods: { zh: 'Mods', en: 'Mods' }, download: { zh: '下载', en: 'Download' }, about: { zh: '关于', en: 'About' }, search: { zh: '🔍', en: '🔍' } };
             document.querySelectorAll('.nav-links a').forEach(link => {
                 const href = link.getAttribute('href');
                 let page = href.replace('.html','');
                 if (page === 'index') page = 'home';
-                if (navMap[page]) {
-                    link.textContent = zh.style.display !== 'none' ? navMap[page].zh : navMap[page].en;
-                }
+                if (navMap[page]) link.textContent = zh.style.display !== 'none' ? navMap[page].zh : navMap[page].en;
             });
         }
     </script>
