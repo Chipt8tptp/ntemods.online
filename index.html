@@ -1,324 +1,336 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><span class="zh-only">NTE HUB - 异环玩家的一站式中心</span><span class="en-only">NTE HUB - Neverness to Everness Hub</span></title>
-    <meta name="description" content="NTE HUB 是最全面的异环攻略站，提供角色强度榜、抽卡指南、Mod推荐。中英双语。">
-    <link rel="canonical" href="https://ntehub.com/">
-    <style>
-        :root {
-            --bg: #0D1117; --bg-secondary: #161B22; --border: #30363D;
-            --primary: #A259FF; --secondary: #3B82F6; --gold: #F59E0B;
-            --a-rank: #A855F7; --text: #E6EDF3; --text-secondary: #8B949E;
-            --danger: #F85149; --success: #3FB950; --max-width: 1200px;
+    <title>Supercar Legends - Play Free Online | Poki Games</title>
+    <meta name="description" content="Play Supercar Legends online for free! A dynamic runner game where math meets supercars. Drive through gates to multiply, divide, add or subtract your cars. Best tips and tricks included.">
+    <meta name="keywords" content="Supercar Legends, Supercar Legends game, Supercar Legends tips, Supercar Legends best upgrades, Poki games, free online games">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF4757',
+                        secondary: '#2F3542',
+                        dark: '#1E272E',
+                    },
+                }
+            }
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh;
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .game-container {
+                aspect-ratio: 16/9;
+                max-height: 80vh;
+            }
         }
-        a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        nav {
-            background: var(--bg-secondary); border-bottom: 1px solid var(--border);
-            position: sticky; top: 0; z-index: 1000;
-        }
-        .nav-inner {
-            max-width: var(--max-width); margin: 0 auto;
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 0 20px; height: 64px;
-        }
-        .logo { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
-        .logo span { color: var(--text); font-weight: 400; }
-        .nav-links { display: flex; gap: 24px; list-style: none; }
-        .nav-links a { color: var(--text-secondary); font-size: 0.95rem; transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--primary); text-decoration: none; }
-        .lang-switch {
-            background: var(--border); border: 1px solid var(--border);
-            color: var(--text); padding: 8px 16px; border-radius: 20px;
-            cursor: pointer; font-size: 0.85rem; transition: all 0.2s;
-        }
-        .lang-switch:hover { border-color: var(--primary); color: var(--primary); }
-
-        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
-
-        .hero {
-            text-align: center; padding: 80px 20px 60px;
-            background: linear-gradient(135deg, #0D1117 0%, #1a1030 50%, #0D1117 100%);
-        }
-        .hero h1 {
-            font-size: 3rem; font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .hero .subtitle { color: var(--text-secondary); font-size: 1.15rem; margin-top: 16px; }
-        .hero .game-info { margin-top: 24px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; }
-        .hero .game-info .info-item {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 12px; padding: 16px 24px;
-        }
-        .hero .game-info .info-item strong { color: var(--primary); }
-
-        .cta-buttons { margin-top: 32px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-        .btn {
-            display: inline-block; padding: 14px 32px; border-radius: 30px;
-            font-weight: 600; font-size: 1rem; transition: all 0.3s;
-            cursor: pointer; text-decoration: none; border: none;
-        }
-        .btn-primary { background: var(--primary); color: #fff; }
-        .btn-primary:hover { background: #8B3FEF; text-decoration: none; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(162,89,255,0.3); }
-        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
-        .btn-outline:hover { background: var(--primary); color: #fff; text-decoration: none; }
-
-        section { margin: 60px 0; }
-        .section-title {
-            font-size: 1.8rem; font-weight: 700; margin-bottom: 32px;
-            padding-bottom: 12px; border-bottom: 2px solid var(--primary); display: inline-block;
-        }
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-        .card {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 12px; padding: 24px; transition: all 0.3s;
-        }
-        .card:hover {
-            border-color: var(--primary); transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(162,89,255,0.1);
-        }
-        .card h3 { font-size: 1.2rem; margin-bottom: 8px; }
-        .card p { color: var(--text-secondary); font-size: 0.9rem; }
-        .tier-badge {
-            display: inline-block; padding: 4px 12px; border-radius: 12px;
-            font-size: 0.8rem; font-weight: 700;
-        }
-        .tier-s { background: var(--gold); color: #000; }
-        .tier-a { background: var(--a-rank); color: #fff; }
-
-        .tier-list-quick {
-            display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; text-align: center;
-        }
-        @media (max-width: 768px) {
-            .tier-list-quick { grid-template-columns: repeat(2, 1fr); }
-            .hero h1 { font-size: 2rem; }
-        }
-
-        .notice-bar {
-            background: linear-gradient(90deg, rgba(162,89,255,0.1), rgba(59,130,246,0.1));
-            border: 1px solid var(--border); border-radius: 12px;
-            padding: 16px 24px; margin-bottom: 32px;
-            display: flex; align-items: center; gap: 12px;
-        }
-        .notice-bar .badge {
-            background: var(--danger); color: #fff; padding: 4px 12px;
-            border-radius: 12px; font-size: 0.8rem; font-weight: 700; white-space: nowrap;
-        }
-
-        footer {
-            background: var(--bg-secondary); border-top: 1px solid var(--border);
-            padding: 40px 20px; margin-top: 60px;
-        }
-        .footer-inner {
-            max-width: var(--max-width); margin: 0 auto;
-            display: flex; justify-content: space-between; flex-wrap: wrap; gap: 24px;
-        }
-        .footer-inner a { color: var(--text-secondary); font-size: 0.9rem; }
-        .footer-inner a:hover { color: var(--primary); }
-        .footer-bottom {
-            text-align: center; padding-top: 24px; margin-top: 24px;
-            border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 0.85rem;
-        }
-
-        .lang-zh .en-only { display: none; }
-        .lang-en .zh-only { display: none; }
     </style>
 </head>
-<body class="lang-zh">
-    <nav>
-        <div class="nav-inner">
-            <a href="index.html" class="logo">NTE<span>HUB</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active"><span class="zh-only">首页</span><span class="en-only">Home</span></a></li>
-                <li><a href="characters.html"><span class="zh-only">角色图鉴</span><span class="en-only">Characters</span></a></li>
-                <li><a href="tier-list.html"><span class="zh-only">强度榜</span><span class="en-only">Tier List</span></a></li>
-                <li><a href="map.html"><span class="zh-only">地图资源</span><span class="en-only">Map</span></a></li>
-                <li><a href="guides.html"><span class="zh-only">攻略中心</span><span class="en-only">Guides</span></a></li>
-                <li><a href="mods.html"><span class="zh-only">Mod中心</span><span class="en-only">Mods</span></a></li>
-                <li><a href="wiki.html"><span class="zh-only">Wiki</span><span class="en-only">Wiki</span></a></li>
-            </ul>
-            <button class="lang-switch" onclick="toggleLang()"><span class="zh-only">🌐 EN</span><span class="en-only">🌐 中文</span></button>
-        </div>
-    </nav>
+<body class="bg-gray-50 text-gray-900">
+    <!-- 顶部固定导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <i class="fa fa-gamepad text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">Free Games Hub</span>
+                </a>
 
-    <header class="hero">
-        <h1>Neverness to Everness</h1>
-        <p class="subtitle"><span class="zh-only">超自然都市开放世界RPG · 二次元GTA · 角色抽卡 · 自由探索海特洛市</span><span class="en-only">Supernatural Urban Open-World RPG · Anime GTA · Character Gacha · Explore Hethereau</span></p>
-        <div class="game-info">
-            <div class="info-item"><strong>Hotta Studio</strong><br><span class="zh-only">开发商</span><span class="en-only">Developer</span></div>
-            <div class="info-item"><strong>2026.04.29</strong><br><span class="zh-only">正式上线</span><span class="en-only">Official Launch</span></div>
-            <div class="info-item"><strong>PC / PS5 / iOS / Android</strong><br><span class="zh-only">全平台</span><span class="en-only">Cross-Platform</span></div>
-            <div class="info-item"><strong>Unreal Engine 5</strong><br><span class="zh-only">游戏引擎</span><span class="en-only">Engine</span></div>
-        </div>
-        <div class="cta-buttons">
-            <a href="https://nte.perfectworld.com/" target="_blank" rel="noopener" class="btn btn-primary"><span class="zh-only">🎮 前往官网下载</span><span class="en-only">🎮 Official Website</span></a>
-            <a href="mods.html" class="btn btn-outline"><span class="zh-only">🎨 浏览Mod</span><span class="en-only">🎨 Browse Mods</span></a>
-            <a href="tier-list.html" class="btn btn-outline"><span class="zh-only">📊 角色强度榜</span><span class="en-only">📊 Tier List</span></a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="/games.html" class="text-primary font-medium">All Games</a>
+                    <a href="/guides.html" class="text-gray-700 hover:text-primary transition-colors">Guides</a>
+                    <a href="/tools.html" class="text-gray-700 hover:text-primary transition-colors">Tools</a>
+                </nav>
+
+                <div class="lang-box">
+                    <a href="supercar-legends.html" class="active">EN</a>
+                    <a href="/zh/games/supercar-legends.html">中文</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <div class="notice-bar" style="margin-top: 32px;">
-            <span class="badge"><span class="zh-only">最新</span><span class="en-only">NEW</span></span>
-            <a href="#" style="color:inherit; text-decoration:none;"><span class="zh-only">🔥 Hotori S级角色卡池即将上线！版本1.0更新内容一览 →</span><span class="en-only">🔥 Hotori S-rank banner coming soon! Version 1.0 update overview →</span></a>
+    <!-- 顶部广告位（728x90） -->
+    <div class="bg-gray-100 py-4">
+        <div class="container mx-auto px-4 text-center">
+            <!-- 替换成你自己的Google AdSense广告代码 -->
+            <div class="bg-gray-200 h-[90px] flex items-center justify-center rounded-lg">
+                <span class="text-gray-500">Top Banner Ad (728x90)</span>
+            </div>
         </div>
+    </div>
 
-        <section>
-            <h2 class="section-title"><span class="zh-only">📊 角色强度榜速览</span><span class="en-only">📊 Tier List Quick View</span></h2>
-            <div class="tier-list-quick">
-                <div class="card" style="text-align:center;">
-                    <span class="tier-badge tier-s">S+</span>
-                    <h3>Nanally</h3>
-                    <p><span class="zh-only">最强输出DPS</span><span class="en-only">Top Burst DPS</span></p>
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- 左侧主内容 -->
+            <div class="lg:col-span-8">
+                <!-- 游戏标题 -->
+                <div class="mb-6">
+                    <h1 class="text-3xl font-bold mb-2">Supercar Legends</h1>
+                    <div class="flex items-center text-gray-500 text-sm">
+                        <span class="mr-4"><i class="fa fa-star text-yellow-500 mr-1"></i> 4.5/5 (1,580 votes)</span>
+                        <span class="mr-4"><i class="fa fa-gamepad mr-1"></i> Racing</span>
+                        <span><i class="fa fa-calendar mr-1"></i> Added: May 15, 2026</span>
+                    </div>
                 </div>
-                <div class="card" style="text-align:center;">
-                    <span class="tier-badge tier-s">S+</span>
-                    <h3>Daffodil</h3>
-                    <p><span class="zh-only">全能副C</span><span class="en-only">Versatile Sub-DPS</span></p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <span class="tier-badge tier-s">S</span>
-                    <h3>Baicang</h3>
-                    <p><span class="zh-only">咒术主C</span><span class="en-only">Incantation Main DPS</span></p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <span class="tier-badge tier-s">S</span>
-                    <h3>Adler</h3>
-                    <p><span class="zh-only">强力护盾</span><span class="en-only">Strong Shield Support</span></p>
-                </div>
-                <div class="card" style="text-align:center;">
-                    <span class="tier-badge tier-s">S</span>
-                    <h3>Jiuyuan</h3>
-                    <p><span class="zh-only">高爆发输出</span><span class="en-only">High Burst Damage</span></p>
-                </div>
-            </div>
-            <div style="text-align:center; margin-top:24px;">
-                <a href="tier-list.html" class="btn btn-outline"><span class="zh-only">查看完整强度榜 →</span><span class="en-only">View Full Tier List →</span></a>
-            </div>
-        </section>
 
-        <section>
-            <h2 class="section-title"><span class="zh-only">🎨 热门Mod推荐</span><span class="en-only">🎨 Hot Mod Picks</span></h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Mint Swimsuit Skin</h3>
-                    <p><span class="zh-only">Mint泳装皮肤替换Mod，粉红条纹比基尼，正常游玩即可显示</span><span class="en-only">Replaces Mint's outfit with swimsuit skin. Pink striped bikini during normal gameplay.</span></p>
-                    <a href="https://ayakamods.com/neverness-to-everness/mods/mint-swimsuit" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.85rem; padding:8px 16px; margin-top:12px;"><span class="zh-only">前往下载</span><span class="en-only">Download</span></a>
+                <!-- 游戏嵌入区域 -->
+                <div class="bg-black rounded-xl overflow-hidden shadow-lg mb-8">
+                    <div class="game-container w-full">
+                        <!-- Poki官方嵌入代码 -->
+                        <iframe 
+                            src="https://poki.com/en/g/supercar-legends/embed" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            allowfullscreen 
+                            allow="autoplay; fullscreen"
+                            loading="lazy">
+                        </iframe>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Nanally Cute Clothes (Bear)</h3>
-                    <p><span class="zh-only">Nanally可爱小熊服装Mod，替换默认服装为萌系小熊套装</span><span class="en-only">Cute bear-themed outfit mod for Nanally.</span></p>
-                    <a href="https://ayakamods.com/neverness-to-everness/mods/nanally-cute-clothes" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.85rem; padding:8px 16px; margin-top:12px;"><span class="zh-only">前往下载</span><span class="en-only">Download</span></a>
-                </div>
-                <div class="card">
-                    <h3>Tartaglia as Baicang</h3>
-                    <p><span class="zh-only">将Baicang替换为《原神》达达利亚角色模型，英文配音完美匹配</span><span class="en-only">Replaces Baicang with Tartaglia (Childe) from Genshin Impact. English VA match.</span></p>
-                    <a href="https://ayakamods.com/neverness-to-everness/mods/tartaglia-baicang" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.85rem; padding:8px 16px; margin-top:12px;"><span class="zh-only">前往下载</span><span class="en-only">Download</span></a>
-                </div>
-            </div>
-            <div style="text-align:center; margin-top:24px;">
-                <a href="mods.html" class="btn btn-outline"><span class="zh-only">浏览全部Mod →</span><span class="en-only">Browse All Mods →</span></a>
-            </div>
-        </section>
 
-        <section>
-            <h2 class="section-title"><span class="zh-only">📚 内容中心</span><span class="en-only">📚 Content Hub</span></h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>🎯 <span class="zh-only">抽卡指南</span><span class="en-only">Gacha Guide</span></h3>
-                    <p><span class="zh-only">了解NTE独特的Scarborough Fair抽卡系统，无50/50机制，保底必出当期UP。含初始重抽（Reroll）完整教程。</span><span class="en-only">Learn NTE's unique Scarborough Fair gacha system. No 50/50 pity system. Complete reroll guide included.</span></p>
-                    <a href="guide-gacha.html"><span class="zh-only">阅读指南 →</span><span class="en-only">Read Guide →</span></a>
+                <!-- 游戏下方广告位（728x90） -->
+                <div class="mb-8 text-center">
+                    <!-- 替换成你自己的Google AdSense广告代码 -->
+                    <div class="bg-gray-200 h-[90px] flex items-center justify-center rounded-lg">
+                        <span class="text-gray-500">Bottom Banner Ad (728x90)</span>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>🗺️ <span class="zh-only">地图资源全收集</span><span class="en-only">Full Map Collection</span></h3>
-                    <p><span class="zh-only">海特洛市全地图隐藏宝箱、异常点、车辆解锁位置、咖啡馆全收集攻略。</span><span class="en-only">Complete Hethereau map: hidden chests, anomaly points, vehicle unlock locations, all cafe collections.</span></p>
-                    <a href="map.html"><span class="zh-only">查看地图 →</span><span class="en-only">View Map →</span></a>
+
+                <!-- 游戏介绍和攻略 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h2 class="text-2xl font-bold mb-4">Game Description</h2>
+                    <p class="text-gray-700 mb-4">
+                        Supercar Legends is a dynamic runner game where math meets supercars! Drive through gates that multiply, divide, add or subtract the number of cars in your convoy. 
+                        Collect as many cars as possible to defeat the boss at the end of each level.
+                    </p>
+
+                    <h2 class="text-2xl font-bold mb-4 mt-8">How to Play</h2>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                        <li>Use your mouse or finger to drag left and right to control your cars</li>
+                        <li>Drive through gates with positive numbers to increase your convoy</li>
+                        <li>Avoid gates with negative numbers that will reduce your cars</li>
+                        <li>Defeat the boss at the end of each level to earn coins</li>
+                        <li>Use coins to upgrade your cars and unlock new vehicles</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold mb-4 mt-8">Best Tips & Tricks</h2>
+                    
+                    <h3 class="text-xl font-semibold mb-3">1. Always Choose Multiplication First</h3>
+                    <p class="text-gray-700 mb-4">
+                        Multiplication gates give you the biggest increase in cars. Always prioritize ×2, ×3 and ×4 gates over addition gates. 
+                        For example, ×2 is better than +5 when you have more than 5 cars.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mb-3">2. Upgrade Order</h3>
+                    <p class="text-gray-700 mb-4">
+                        Upgrade your cars in this order for maximum efficiency:
+                    </p>
+                    <ol class="list-decimal list-inside text-gray-700 space-y-1 mb-4">
+                        <li>Starting Cars (most important)</li>
+                        <li>Damage per Car</li>
+                        <li>Income Multiplier</li>
+                        <li>Car Speed</li>
+                    </ol>
+
+                    <h3 class="text-xl font-semibold mb-3">3. Boss Fight Strategy</h3>
+                    <p class="text-gray-700 mb-4">
+                        Before reaching the boss, make sure you have at least 20-30 cars. The boss has a health bar, 
+                        and each of your cars deals damage equal to your damage upgrade.
+                    </p>
+
+                    <h3 class="text-xl font-semibold mb-3">4. Watch Ads for Double Coins</h3>
+                    <p class="text-gray-700">
+                        After completing each level, you can watch a short ad to double your coins. This is the fastest way to earn coins and upgrade your cars.
+                    </p>
                 </div>
-                <div class="card">
-                    <h3>🔧 <span class="zh-only">Mod安装教程</span><span class="en-only">Mod Install Tutorial</span></h3>
-                    <p><span class="zh-only">从零开始教你安装NTE Mod：3DMigoto工具配置、pak mod安装、签名绕过工具使用，含常见问题解答。</span><span class="en-only">Install NTE Mods from scratch: 3DMigoto setup, pak mod installation, signature bypass tool usage. FAQ included.</span></p>
-                    <a href="mod-tutorial.html"><span class="zh-only">查看教程 →</span><span class="en-only">View Tutorial →</span></a>
-                </div>
-                <div class="card">
-                    <h3>👤 <span class="zh-only">角色图鉴</span><span class="en-only">Character Database</span></h3>
-                    <p><span class="zh-only">全部已确认Esper角色资料、技能详解、Build推荐、配队建议。</span><span class="en-only">Complete Esper character database, skill details, build recommendations, team comps.</span></p>
-                    <a href="characters.html"><span class="zh-only">查看图鉴 →</span><span class="en-only">View Characters →</span></a>
-                </div>
-                <div class="card">
-                    <h3>📖 <span class="zh-only">Wiki百科</span><span class="en-only">Wiki</span></h3>
-                    <p><span class="zh-only">游戏机制详解：Esper Cycle反应系统、通缉系统、车辆改装、咖啡馆经营、好感度系统。</span><span class="en-only">Game mechanics: Esper Cycle reactions, Wanted system, vehicle customization, cafe management, affection system.</span></p>
-                    <a href="wiki.html"><span class="zh-only">查看Wiki →</span><span class="en-only">View Wiki →</span></a>
-                </div>
-                <div class="card">
-                    <h3>🛠️ <span class="zh-only">工具</span><span class="en-only">Tools</span></h3>
-                    <p><span class="zh-only">伤害计算器、配队模拟器、抽卡模拟器</span><span class="en-only">Damage calculator, team builder, gacha simulator</span></p>
-                    <a href="tools.html"><span class="zh-only">使用工具 →</span><span class="en-only">Use Tools →</span></a>
+
+                <!-- 相关游戏推荐 -->
+                <div class="bg-white rounded-xl shadow-md p-6 mt-8">
+                    <h2 class="text-2xl font-bold mb-6">Similar Games You Might Like</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <a href="/games/drift-boss.html" class="block">
+                            <div class="bg-gray-100 rounded-lg h-24 mb-2 flex items-center justify-center">
+                                <span class="text-gray-500 text-sm">Drift Boss</span>
+                            </div>
+                            <p class="text-sm font-medium text-center">Drift Boss</p>
+                        </a>
+                        <a href="/games/moto-x3m.html" class="block">
+                            <div class="bg-gray-100 rounded-lg h-24 mb-2 flex items-center justify-center">
+                                <span class="text-gray-500 text-sm">Moto X3M</span>
+                            </div>
+                            <p class="text-sm font-medium text-center">Moto X3M</p>
+                        </a>
+                        <a href="/games/hill-climb-racing.html" class="block">
+                            <div class="bg-gray-100 rounded-lg h-24 mb-2 flex items-center justify-center">
+                                <span class="text-gray-500 text-sm">Hill Climb Racing</span>
+                            </div>
+                            <p class="text-sm font-medium text-center">Hill Climb Racing</p>
+                        </a>
+                        <a href="/games/basket-random.html" class="block">
+                            <div class="bg-gray-100 rounded-lg h-24 mb-2 flex items-center justify-center">
+                                <span class="text-gray-500 text-sm">Basket Random</span>
+                            </div>
+                            <p class="text-sm font-medium text-center">Basket Random</p>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </section>
+
+            <!-- 右侧边栏 -->
+            <div class="lg:col-span-4">
+                <!-- 侧边栏广告位（300x250） -->
+                <div class="bg-white rounded-xl shadow-md p-4 mb-8 text-center">
+                    <!-- 替换成你自己的Google AdSense广告代码 -->
+                    <div class="bg-gray-200 h-[250px] flex items-center justify-center rounded-lg">
+                        <span class="text-gray-500">Sidebar Ad (300x250)</span>
+                    </div>
+                </div>
+
+                <!-- 游戏信息卡片 -->
+                <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                    <h3 class="font-bold text-lg mb-4">Game Information</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex justify-between">
+                            <span><i class="fa fa-globe mr-2"></i> Platform:</span>
+                            <span>Browser (PC/Mobile)</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><i class="fa fa-users mr-2"></i> Players:</span>
+                            <span>Single Player</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><i class="fa fa-language mr-2"></i> Language:</span>
+                            <span>English</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><i class="fa fa-star mr-2"></i> Rating:</span>
+                            <span>4.5/5</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span><i class="fa fa-calendar mr-2"></i> Released:</span>
+                            <span>May 15, 2026</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 热门游戏 -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="font-bold text-lg mb-4 flex items-center">
+                        <i class="fa fa-fire text-red-500 mr-2"></i> Trending Games
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">1</span>
+                            <a href="/games/supercar-legends.html" class="text-gray-700 hover:text-primary transition-colors">
+                                Supercar Legends
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-red-400 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">2</span>
+                            <a href="/games/cubidle.html" class="text-gray-700 hover:text-primary transition-colors">
+                                Cubidle
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-red-300 text-white rounded-full flex items-center justify-center text-xs font-bold mr-3">3</span>
+                            <a href="/games/goal-gang.html" class="text-gray-700 hover:text-primary transition-colors">
+                                Goal Gang
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-gray-300 text-gray-700 rounded-full flex items-center justify-center text-xs font-bold mr-3">4</span>
+                            <a href="/games/hivebound.html" class="text-gray-700 hover:text-primary transition-colors">
+                                Hivebound
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-gray-300 text-gray-700 rounded-full flex items-center justify-center text-xs font-bold mr-3">5</span>
+                            <a href="/games/bubble-tower.html" class="text-gray-700 hover:text-primary transition-colors">
+                                Bubble Tower
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <div class="footer-inner">
-            <div>
-                <h4 style="color:var(--primary);">NTE HUB</h4>
-                <p style="color:var(--text-secondary); font-size:0.85rem;"><span class="zh-only">异环玩家的一站式中心</span><span class="en-only">Your one-stop hub for Neverness to Everness</span></p>
+    <!-- 底部 -->
+    <footer class="bg-dark text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <i class="fa fa-gamepad text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">Free Games Hub</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Play thousands of free online games directly in your browser. No downloads, no registration required.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/games.html" class="text-gray-400 hover:text-white transition-colors">All Games</a></li>
+                        <li><a href="/guides.html" class="text-gray-400 hover:text-white transition-colors">Guides</a></li>
+                        <li><a href="/tools.html" class="text-gray-400 hover:text-white transition-colors">Tools</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Popular Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/categories/racing.html" class="text-gray-400 hover:text-white transition-colors">Racing Games</a></li>
+                        <li><a href="/categories/action.html" class="text-gray-400 hover:text-white transition-colors">Action Games</a></li>
+                        <li><a href="/categories/puzzle.html" class="text-gray-400 hover:text-white transition-colors">Puzzle Games</a></li>
+                        <li><a href="/categories/idle.html" class="text-gray-400 hover:text-white transition-colors">Idle Games</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/disclaimer.html" class="text-gray-400 hover:text-white transition-colors">Disclaimer</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h4><span class="zh-only">内容导航</span><span class="en-only">Navigation</span></h4>
-                <a href="tier-list.html"><span class="zh-only">强度榜</span><span class="en-only">Tier List</span></a><br>
-                <a href="characters.html"><span class="zh-only">角色图鉴</span><span class="en-only">Characters</span></a><br>
-                <a href="map.html"><span class="zh-only">地图资源</span><span class="en-only">Map</span></a><br>
-                <a href="guides.html"><span class="zh-only">攻略中心</span><span class="en-only">Guides</span></a>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500 text-sm">
+                <p>© 2026 Free Games Hub. All games are property of their respective owners.</p>
+                <p class="mt-2">All games are embedded from official platforms. We do not host any game files.</p>
             </div>
-            <div>
-                <h4><span class="zh-only">Mod资源</span><span class="en-only">Mod Resources</span></h4>
-                <a href="mods.html"><span class="zh-only">Mod中心</span><span class="en-only">Mods</span></a><br>
-                <a href="mod-tutorial.html"><span class="zh-only">安装教程</span><span class="en-only">Install Guide</span></a><br>
-                <a href="mod-rankings.html"><span class="zh-only">热门排行</span><span class="en-only">Rankings</span></a><br>
-                <a href="mod-faq.html"><span class="zh-only">常见问题</span><span class="en-only">FAQ</span></a>
-            </div>
-            <div>
-                <h4><span class="zh-only">关于</span><span class="en-only">About</span></h4>
-                <a href="about.html"><span class="zh-only">关于我们</span><span class="en-only">About Us</span></a><br>
-                <a href="privacy.html"><span class="zh-only">隐私政策</span><span class="en-only">Privacy Policy</span></a><br>
-                <a href="https://discord.gg/ZE3DAAWu85" target="_blank" rel="noopener">Discord</a><br>
-                <a href="https://nte.perfectworld.com/" target="_blank" rel="noopener"><span class="zh-only">游戏官网</span><span class="en-only">Official Site</span></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 NTE HUB. <span class="zh-only">本站为玩家自制内容站，与Hotta Studio及Perfect World无关联。</span><span class="en-only">Fan-made content site. Not affiliated with Hotta Studio or Perfect World.</span></p>
         </div>
     </footer>
 
     <script>
-        (function() {
-            var savedLang = localStorage.getItem('nte-lang') || 'zh';
-            document.body.classList.remove('lang-zh', 'lang-en');
-            document.body.classList.add('lang-' + savedLang);
-        })();
-
-        function toggleLang() {
-            var body = document.body;
-            if (body.classList.contains('lang-zh')) {
-                body.classList.remove('lang-zh');
-                body.classList.add('lang-en');
-                localStorage.setItem('nte-lang', 'en');
-            } else {
-                body.classList.remove('lang-en');
-                body.classList.add('lang-zh');
-                localStorage.setItem('nte-lang', 'zh');
-            }
-        }
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e){
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetEl = document.querySelector(targetId);
+                if(targetEl){
+                    targetEl.scrollIntoView({behavior:'smooth'});
+                }
+            });
+        });
     </script>
 </body>
 </html>
