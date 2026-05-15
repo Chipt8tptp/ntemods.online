@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><span class="zh-only">地图资源</span><span class="en-only">Map Resources</span> - NTE HUB</title>
-    <meta name="description" content="NTE异环海特洛市完整地图资源：隐藏宝箱位置、异常点、车辆解锁、咖啡馆收集品。">
-    <link rel="canonical" href="https://ntehub.com/map/">
+    <title><span class="zh-only">攻略中心</span><span class="en-only">Guides</span> - NTE HUB</title>
+    <meta name="description" content="NTE异环攻略中心：基础入门、进阶技巧、角色Build、抽卡指南、车辆获取等全方位攻略。">
+    <link rel="canonical" href="https://ntehub.com/guides/">
     <style>
         :root { --bg:#0D1117; --bg2:#161B22; --border:#30363D; --primary:#A259FF; --text:#E6EDF3; --text2:#8B949E; --max:1000px; }
         *{margin:0;padding:0;box-sizing:border-box;}
@@ -21,11 +21,10 @@
         .page-header{padding:40px 0 20px;text-align:center;}
         .page-header h1{font-size:2.5rem;color:var(--primary);}
         .breadcrumb{color:var(--text2);font-size:0.9rem;margin-bottom:20px;}
-        .map-placeholder{background:var(--bg2);border:2px dashed var(--border);border-radius:16px;padding:80px 20px;text-align:center;margin:40px 0;}
-        .map-placeholder p{color:var(--text2);font-size:1.2rem;}
-        .resource-list{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;}
-        .resource-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px;}
-        .resource-item h3{color:var(--primary);}
+        .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:40px;}
+        .card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;transition:0.2s;}
+        .card:hover{border-color:var(--primary);}
+        .card h3{color:var(--primary);margin-bottom:8px;}
         footer{background:var(--bg2);border-top:1px solid var(--border);padding:30px 20px;margin-top:60px;text-align:center;color:var(--text2);font-size:0.85rem;}
         .lang-zh .en-only{display:none;} .lang-en .zh-only{display:none;}
     </style>
@@ -36,25 +35,22 @@
             <a href="index.html" class="logo">NTE<span>HUB</span></a>
             <ul class="nav-links">
                 <li><a href="index.html"><span class="zh-only">首页</span><span class="en-only">Home</span></a></li>
-                <li><a href="map.html" class="active"><span class="zh-only">地图资源</span><span class="en-only">Map</span></a></li>
+                <li><a href="guides.html" class="active"><span class="zh-only">攻略中心</span><span class="en-only">Guides</span></a></li>
             </ul>
             <button class="lang-switch" onclick="toggleLang()"><span class="zh-only">🌐 EN</span><span class="en-only">🌐 中文</span></button>
         </div>
     </nav>
     <main class="container">
         <div class="page-header">
-            <p class="breadcrumb"><a href="index.html">Home</a> &raquo; <span class="zh-only">地图资源</span><span class="en-only">Map</span></p>
-            <h1>🗺️ <span class="zh-only">地图资源</span><span class="en-only">Map Resources</span></h1>
-            <p><span class="zh-only">海特洛市隐藏宝箱、异常点、车辆位置一览</span><span class="en-only">Hethereau hidden chests, anomalies, vehicle locations.</span></p>
+            <p class="breadcrumb"><a href="index.html">Home</a> &raquo; <span class="zh-only">攻略中心</span><span class="en-only">Guides</span></p>
+            <h1>📚 <span class="zh-only">攻略中心</span><span class="en-only">Guides</span></h1>
+            <p><span class="zh-only">从入门到精通，全方位NTE攻略</span><span class="en-only">From beginner to pro, comprehensive NTE guides.</span></p>
         </div>
-        <div class="map-placeholder">
-            <p>🗺️ <span class="zh-only">交互式地图即将上线，敬请期待！</span><span class="en-only">Interactive map coming soon!</span></p>
-        </div>
-        <div class="resource-list">
-            <div class="resource-item"><h3>📦 <span class="zh-only">隐藏宝箱 (32)</span><span class="en-only">Hidden Chests (32)</span></h3><p><span class="zh-only">分布在市中心、港口、郊区</span><span class="en-only">Downtown, Port, Suburbs.</span></p></div>
-            <div class="resource-item"><h3>🌀 <span class="zh-only">异常点 (12)</span><span class="en-only">Anomalies (12)</span></h3><p><span class="zh-only">击败后获得高额奖励</span><span class="en-only">Defeat for high rewards.</span></p></div>
-            <div class="resource-item"><h3>🚗 <span class="zh-only">车辆解锁 (8)</span><span class="en-only">Vehicle Unlocks (8)</span></h3><p><span class="zh-only">完成任务或挑战获得</span><span class="en-only">Complete missions or challenges.</span></p></div>
-            <div class="resource-item"><h3>☕ <span class="zh-only">咖啡馆收集品 (5)</span><span class="en-only">Cafe Collections (5)</span></h3><p><span class="zh-only">经营咖啡馆解锁特殊奖励</span><span class="en-only">Cafe management unlocks special rewards.</span></p></div>
+        <div class="card-grid">
+            <a href="guide-gacha.html" class="card" style="display:block;"><h3>🎯 <span class="zh-only">抽卡指南</span><span class="en-only">Gacha Guide</span></h3><p><span class="zh-only">Scarborough Fair系统详解与重抽教程</span><span class="en-only">Scarborough Fair system and reroll tutorial.</span></p></a>
+            <div class="card"><h3>⚔️ <span class="zh-only">战斗进阶</span><span class="en-only">Combat Advanced</span></h3><p><span class="zh-only">Esper Cycle反应深度应用</span><span class="en-only">Esper Cycle reaction in-depth application.</span></p></div>
+            <div class="card"><h3>🗺️ <span class="zh-only">探索收集</span><span class="en-only">Exploration</span></h3><p><span class="zh-only">全地图资源点位与路线</span><span class="en-only">Full map resource locations and routes.</span></p></div>
+            <div class="card"><h3>🚗 <span class="zh-only">车辆大师</span><span class="en-only">Vehicle Master</span></h3><p><span class="zh-only">全车辆解锁条件与改装推荐</span><span class="en-only">All vehicle unlock conditions and customization tips.</span></p></div>
         </div>
     </main>
     <footer><p>&copy; 2026 NTE HUB.</p></footer>

@@ -3,120 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>隐私政策与关于我们 - 异环异闻带</title>
-    <link rel="canonical" href="https://www.nte-hub.com/about.html">
+    <title><span class="zh-only">关于我们</span><span class="en-only">About Us</span> - NTE HUB</title>
+    <meta name="description" content="了解NTE HUB——最全面的异环玩家内容站。">
     <style>
-        :root { --bg: #f5f5f7; --card-bg: #ffffff; --text: #1d1d1f; --text-secondary: #86868b; --accent: #0071e3; --accent-hover: #0077ed; --border: #d2d2d7; --radius: 18px; --shadow: 0 2px 12px rgba(0,0,0,0.04); }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", sans-serif; background: var(--bg); color: var(--text); line-height:1.6; min-height:100vh; display:flex; flex-direction:column; }
-        a { text-decoration:none; color: var(--accent); }
-        .navbar { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; flex-wrap:wrap; gap:1rem; }
-        .logo { font-size:1.4rem; font-weight:700; color:var(--text); letter-spacing: -0.5px; }
-        .logo span { color: var(--accent); }
-        .nav-links { display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap; }
-        .nav-links a { color:var(--text-secondary); font-weight:500; font-size:0.95rem; padding:0.3rem 0; border-bottom:2px solid transparent; transition:0.2s; }
-        .nav-links a:hover, .nav-links a.active { color:var(--text); border-bottom-color:var(--accent); }
-        .lang-btn { background:var(--card-bg); border:1px solid var(--border); padding:0.5rem 1.2rem; border-radius:30px; cursor:pointer; font-weight:500; font-size:0.9rem; color:var(--text); display:flex; align-items:center; gap:0.3rem; transition:0.2s; }
-        .lang-btn:hover { border-color:var(--accent); color:var(--accent); }
-        .hero { text-align:center; padding:3rem 2rem; }
-        .hero h1 { font-size:2.5rem; font-weight:700; color:var(--text); margin-bottom:1rem; }
-        .hero h1 span { color: var(--accent); }
-        .section { max-width:800px; margin:0 auto 3rem; padding:0 1.5rem; }
-        .card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:2rem; box-shadow:var(--shadow); }
-        .card h2 { font-size:1.5rem; margin-bottom:1rem; color:var(--text); }
-        .card h3 { font-size:1.2rem; margin:1.5rem 0 0.5rem; color:var(--text); }
-        .card p, .card li { color:var(--text-secondary); margin-bottom:0.8rem; }
-        .card ul { padding-left:1.5rem; }
-        footer { margin-top:auto; text-align:center; padding:2rem; border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem; }
-        @media (max-width: 640px) { .hero h1 { font-size:2rem; } .navbar { padding:1rem; } .nav-links { gap:0.8rem; } }
+        :root { --bg:#0D1117; --bg2:#161B22; --border:#30363D; --primary:#A259FF; --text:#E6EDF3; --text2:#8B949E; --max:800px; }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;}
+        a{color:var(--primary);}
+        .container{max-width:var(--max);margin:0 auto;padding:20px;}
+        nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 20px;text-align:center;}
+        .logo{font-size:1.5rem;font-weight:800;color:var(--primary);text-decoration:none;}
+        .page-header{padding:40px 0 20px;text-align:center;}
+        .page-header h1{font-size:2rem;color:var(--primary);}
+        section{margin:32px 0;}
+        section h2{font-size:1.3rem;color:var(--primary);margin-bottom:12px;}
+        footer{background:var(--bg2);border-top:1px solid var(--border);padding:30px 20px;margin-top:60px;text-align:center;color:var(--text2);font-size:0.85rem;}
+        .lang-zh .en-only{display:none;} .lang-en .zh-only{display:none;}
     </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="logo">🔮 <span>异闻带</span> Nexus Hub</div>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">首页</a>
-            <a href="characters.html">角色</a>
-            <a href="map.html">地图</a>
-            <a href="mods.html">Mods</a>
-            <a href="download.html">下载</a>
-            <a href="about.html" class="active">关于</a>
-            <a href="search.html">🔍</a>
+<body class="lang-zh">
+    <nav><a href="index.html" class="logo">NTE<span style="color:var(--text);font-weight:400;">HUB</span></a></nav>
+    <main class="container">
+        <div class="page-header">
+            <h1><span class="zh-only">关于 NTE HUB</span><span class="en-only">About NTE HUB</span></h1>
+            <p style="color:var(--text2);"><span class="zh-only">异环玩家的一站式中心</span><span class="en-only">Your one-stop hub for Neverness to Everness.</span></p>
         </div>
-        <button class="lang-btn" onclick="toggleLang()">🌐 <span id="langLabel">EN</span></button>
-    </nav>
-
-    <main>
-        <div id="zh-content">
-            <section class="hero">
-                <h1>📜 <span>关于我们</span> & 隐私政策</h1>
-            </section>
-            <section class="section">
-                <div class="card">
-                    <h2>关于异环异闻带</h2>
-                    <p>异环异闻带（Nexus Hub）是《Neverness to Everness》（异环）的非官方粉丝内容站。我们致力于为全球玩家提供高质量的角色攻略、全地图收集指南、Mod安装教程和工具整合。</p>
-                    <p>本站所有内容均为社区贡献，与完美世界、Hotta Studio 无任何关联。游戏内所有角色、图像、商标版权归其各自所有者所有。</p>
-                    <h2>隐私政策</h2>
-                    <p>本站为纯静态网站，<strong>不会收集任何个人信息</strong>。</p>
-                    <ul>
-                        <li>不使用 Cookie 或用户追踪脚本</li>
-                        <li>不存储任何用户数据</li>
-                        <li>所有页面均为本地浏览器渲染</li>
-                    </ul>
-                    <p>如果您通过本站链接访问了第三方服务（如Nexus Mods、游民星空互动地图等），这些服务可能遵循其自身的隐私条款，建议查阅对应平台的隐私政策。</p>
-                    <h2>免责声明</h2>
-                    <p><strong>⚠️ Mod使用风险提示：</strong>本网站提供的Mod安装教程仅作学习交流用途。Mod非官方制作，使用前请备份游戏文件。若因Mod使用导致账号异常、游戏损坏或任何其他损失，本站不承担任何责任。</p>
-                    <p>联系邮箱：<a href="mailto:hello@nte-hub.com">hello@nte-hub.com</a>（占位）</p>
-                </div>
-            </section>
-        </div>
-        <div id="en-content" style="display:none;">
-            <section class="hero">
-                <h1>📜 <span>About Us</span> & Privacy Policy</h1>
-            </section>
-            <section class="section">
-                <div class="card">
-                    <h2>About Nexus Hub</h2>
-                    <p>Nexus Hub is an unofficial fan project for Neverness to Everness (NTE). We provide quality character guides, full map walkthroughs, mod installation tutorials, and tool integration for players worldwide.</p>
-                    <p>All content is community-driven and not affiliated with Perfect World or Hotta Studio. All in-game characters, images, and trademarks belong to their respective owners.</p>
-                    <h2>Privacy Policy</h2>
-                    <p>This is a static site. <strong>We do not collect any personal information.</strong></p>
-                    <ul>
-                        <li>No cookies or tracking scripts</li>
-                        <li>No user data stored</li>
-                        <li>All pages render locally in your browser</li>
-                    </ul>
-                    <p>If you access third-party services through our links (e.g., Nexus Mods, Gamersky interactive map), they may have their own privacy terms. Please refer to those platforms' policies.</p>
-                    <h2>Disclaimer</h2>
-                    <p><strong>⚠️ Mod Usage Risk Notice:</strong> Mod installation guides are for educational purposes only. Mods are unofficial. Please back up your game files before use. We are not responsible for any account issues, game damage, or other losses caused by mod usage.</p>
-                    <p>Contact: <a href="mailto:hello@nte-hub.com">hello@nte-hub.com</a> (placeholder)</p>
-                </div>
-            </section>
-        </div>
+        <section>
+            <h2><span class="zh-only">我们的使命</span><span class="en-only">Our Mission</span></h2>
+            <p><span class="zh-only">为 Neverness to Everness 全球玩家提供最全面、最及时的游戏资讯与攻略内容。</span><span class="en-only">Provide the most comprehensive and timely game info and guides for NTE players worldwide.</span></p>
+        </section>
+        <section>
+            <h2><span class="zh-only">内容声明</span><span class="en-only">Content Disclaimer</span></h2>
+            <p><span class="zh-only">本站为玩家自发创建的粉丝内容平台，与游戏开发商及发行商无任何商业关联。</span><span class="en-only">This is a fan-made content platform with no commercial affiliation with the developer or publisher.</span></p>
+        </section>
     </main>
-
-    <footer>
-        <p>© 2026 异环异闻带 | Nexus Hub. 游戏版权归 Hotta Studio / Perfect World 所有。</p>
-        <p>This site is a fan project and is not affiliated with NTE officials.</p>
-    </footer>
-
+    <footer><p>&copy; 2026 NTE HUB. <span class="zh-only">本站为玩家自制内容站。</span><span class="en-only">Fan-made content site.</span></p></footer>
     <script>
+        (function() {
+            var savedLang = localStorage.getItem('nte-lang') || 'zh';
+            document.body.classList.remove('lang-zh', 'lang-en');
+            document.body.classList.add('lang-' + savedLang);
+        })();
         function toggleLang() {
-            const zh = document.getElementById('zh-content');
-            const en = document.getElementById('en-content');
-            const label = document.getElementById('langLabel');
-            if (zh.style.display === 'none') {
-                zh.style.display = 'block'; en.style.display = 'none'; label.textContent = 'EN';
+            var body = document.body;
+            if (body.classList.contains('lang-zh')) {
+                body.classList.remove('lang-zh'); body.classList.add('lang-en');
+                localStorage.setItem('nte-lang', 'en');
             } else {
-                zh.style.display = 'none'; en.style.display = 'block'; label.textContent = '中';
+                body.classList.remove('lang-en'); body.classList.add('lang-zh');
+                localStorage.setItem('nte-lang', 'zh');
             }
-            const navMap = { home: { zh: '首页', en: 'Home' }, characters: { zh: '角色', en: 'Characters' }, map: { zh: '地图', en: 'Map' }, mods: { zh: 'Mods', en: 'Mods' }, download: { zh: '下载', en: 'Download' }, about: { zh: '关于', en: 'About' }, search: { zh: '🔍', en: '🔍' } };
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                const href = link.getAttribute('href');
-                let page = href.replace('.html','');
-                if (page === 'index') page = 'home';
-                if (navMap[page]) link.textContent = zh.style.display !== 'none' ? navMap[page].zh : navMap[page].en;
-            });
         }
     </script>
 </body>

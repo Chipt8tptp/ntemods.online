@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - <span class="zh-only">页面未找到</span><span class="en-only">Page Not Found</span></title>
+    <meta name="robots" content="noindex">
+    <style>
+        :root { --bg:#0D1117; --primary:#A259FF; --text:#E6EDF3; --text2:#8B949E; }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);display:flex;align-items:center;justify-content:center;min-height:100vh;text-align:center;}
+        .logo{font-size:1.5rem;color:var(--primary);text-decoration:none;font-weight:800;}
+        h1{font-size:6rem;color:var(--primary);margin:20px 0;}
+        p{color:var(--text2);margin:16px 0;}
+        a{color:var(--primary);}
+        .lang-zh .en-only{display:none;} .lang-en .zh-only{display:none;}
+    </style>
+</head>
+<body class="lang-zh">
+    <div>
+        <a href="index.html" class="logo">NTE<span style="color:var(--text);font-weight:400;">HUB</span></a>
+        <h1>404</h1>
+        <p><span class="zh-only">页面未找到</span><span class="en-only">Page Not Found</span></p>
+        <p><a href="index.html">← <span class="zh-only">返回首页</span><span class="en-only">Back to Home</span></a></p>
+    </div>
+    <script>
+        (function() {
+            var savedLang = localStorage.getItem('nte-lang') || 'zh';
+            document.body.classList.remove('lang-zh', 'lang-en');
+            document.body.classList.add('lang-' + savedLang);
+        })();
+        function toggleLang() {
+            var body = document.body;
+            if (body.classList.contains('lang-zh')) {
+                body.classList.remove('lang-zh'); body.classList.add('lang-en');
+                localStorage.setItem('nte-lang', 'en');
+            } else {
+                body.classList.remove('lang-en'); body.classList.add('lang-zh');
+                localStorage.setItem('nte-lang', 'zh');
+            }
+        }
+    </script>
+</body>
+</html>

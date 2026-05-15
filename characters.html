@@ -3,137 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>角色图鉴与强度攻略 - 异环异闻带</title>
-    <link rel="canonical" href="https://www.nte-hub.com/characters.html">
-    <!-- Plausible Analytics -->
-    <script defer data-domain="ntemods.online" src="https://plausible.io/js/script.js"></script>
+    <title><span class="zh-only">角色图鉴</span><span class="en-only">Characters</span> - NTE HUB</title>
+    <meta name="description" content="NTE异环全部角色图鉴，含角色背景、技能、属性、Build推荐。">
+    <link rel="canonical" href="https://ntehub.com/characters/">
     <style>
-        :root { --bg: #f5f5f7; --card-bg: #ffffff; --text: #1d1d1f; --text-secondary: #86868b; --accent: #0071e3; --accent-hover: #0077ed; --border: #d2d2d7; --radius: 18px; --shadow: 0 2px 12px rgba(0,0,0,0.04); }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", sans-serif; background: var(--bg); color: var(--text); line-height:1.5; min-height:100vh; display:flex; flex-direction:column; }
-        a { text-decoration:none; color: var(--accent); }
-        .navbar { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; flex-wrap:wrap; gap:1rem; }
-        .logo { font-size:1.4rem; font-weight:700; color:var(--text); letter-spacing: -0.5px; }
-        .logo span { color: var(--accent); }
-        .nav-links { display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap; }
-        .nav-links a { color:var(--text-secondary); font-weight:500; font-size:0.95rem; padding:0.3rem 0; border-bottom:2px solid transparent; transition:0.2s; }
-        .nav-links a:hover, .nav-links a.active { color:var(--text); border-bottom-color:var(--accent); }
-        .lang-btn { background:var(--card-bg); border:1px solid var(--border); padding:0.5rem 1.2rem; border-radius:30px; cursor:pointer; font-weight:500; font-size:0.9rem; color:var(--text); display:flex; align-items:center; gap:0.3rem; transition:0.2s; }
-        .lang-btn:hover { border-color:var(--accent); color:var(--accent); }
-        .hero { text-align:center; padding:3rem 2rem; }
-        .hero h1 { font-size:2.5rem; font-weight:700; color:var(--text); margin-bottom:1rem; }
-        .hero h1 span { color: var(--accent); }
-        .hero p { color:var(--text-secondary); font-size:1.2rem; max-width:600px; margin:0 auto; }
-        .section { max-width:1100px; margin:0 auto 3rem; padding:0 1.5rem; }
-        .section-title { font-size:1.8rem; font-weight:700; margin-bottom:1.5rem; padding-left:1rem; border-left:4px solid var(--accent); }
-        .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; }
-        .card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow); transition:0.2s; }
-        .card:hover { border-color:var(--accent); transform:translateY(-2px); }
-        .card h3 { font-size:1.2rem; margin-bottom:0.5rem; }
-        .card p { color:var(--text-secondary); font-size:0.95rem; }
-        .tag { background: var(--accent); color:#fff; font-size:0.7rem; font-weight:700; padding:0.2rem 0.7rem; border-radius:20px; display:inline-block; margin-bottom:0.8rem; }
-        footer { margin-top:auto; text-align:center; padding:2rem; border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem; }
-        @media (max-width: 640px) { .hero h1 { font-size:2rem; } .navbar { padding:1rem; } .nav-links { gap:0.8rem; } }
+        :root { --bg:#0D1117; --bg2:#161B22; --border:#30363D; --primary:#A259FF; --text:#E6EDF3; --text2:#8B949E; --max:1100px; }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+        a{color:var(--primary);text-decoration:none;} a:hover{text-decoration:underline;}
+        nav{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;}
+        .nav-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:64px;}
+        .logo{font-size:1.8rem;font-weight:800;color:var(--primary);} .logo span{color:var(--text);font-weight:400;}
+        .nav-links{display:flex;gap:20px;list-style:none;} .nav-links a{color:var(--text2);font-size:0.95rem;}
+        .nav-links a:hover,.nav-links a.active{color:var(--primary);text-decoration:none;}
+        .lang-switch{background:var(--border);border:1px solid var(--border);color:var(--text);padding:8px 16px;border-radius:20px;cursor:pointer;font-size:0.85rem;}
+        .container{max-width:var(--max);margin:0 auto;padding:20px;}
+        .page-header{padding:40px 0 20px;text-align:center;}
+        .page-header h1{font-size:2.5rem;color:var(--primary);}
+        .breadcrumb{color:var(--text2);font-size:0.9rem;margin-bottom:20px;}
+        .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:40px;}
+        .char-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;transition:0.2s;text-align:center;}
+        .char-card:hover{border-color:var(--primary);transform:translateY(-4px);}
+        .char-card h3{font-size:1.2rem;margin:8px 0;}
+        .char-card .attr{color:var(--primary);font-size:0.9rem;margin-bottom:8px;}
+        .char-card p{color:var(--text2);font-size:0.85rem;}
+        footer{background:var(--bg2);border-top:1px solid var(--border);padding:30px 20px;margin-top:60px;text-align:center;color:var(--text2);font-size:0.85rem;}
+        .lang-zh .en-only{display:none;} .lang-en .zh-only{display:none;}
     </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="logo">🔮 <span>异闻带</span> Nexus Hub</div>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">首页</a>
-            <a href="characters.html" class="active">角色</a>
-            <a href="map.html">地图</a>
-            <a href="mods.html">Mods</a>
-            <a href="download.html">下载</a>
-            <a href="about.html">关于</a>
-            <a href="search.html">🔍</a>
+<body class="lang-zh">
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">NTE<span>HUB</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html"><span class="zh-only">首页</span><span class="en-only">Home</span></a></li>
+                <li><a href="characters.html" class="active"><span class="zh-only">角色图鉴</span><span class="en-only">Characters</span></a></li>
+            </ul>
+            <button class="lang-switch" onclick="toggleLang()"><span class="zh-only">🌐 EN</span><span class="en-only">🌐 中文</span></button>
         </div>
-        <button class="lang-btn" onclick="toggleLang()">🌐 <span id="langLabel">EN</span></button>
     </nav>
-
-    <main>
-        <div id="zh-content">
-            <section class="hero">
-                <h1>🎯 <span>角色图鉴</span> & XP抽卡指南</h1>
-                <p>公测全角色强度榜、配队思路、遗器/弧盘推荐、突破材料一网打尽。</p>
-            </section>
-            <section class="section">
-                <h2 class="section-title">🌟 S级角色强度榜</h2>
-                <div class="grid">
-                    <div class="card"><span class="tag">T0</span><h3>娜娜莉 · 限定S · 灵系</h3><p>全角色最高爆伤，普攻5段眩晕，远程闪电+大招AOE+幽灵协战，0命即强势。配队：娜娜莉 + 九原 + 早雾/薄荷</p></div>
-                    <div class="card"><span class="tag">T0</span><h3>小吱 · 免费S · 光系</h3><p>站场输出稳定，大招“拉K线”爆发惊人，钱越多越强，单体BOSS超越娜娜莉。</p></div>
-                    <div class="card"><span class="tag">T0</span><h3>白藏 · 常驻S · 咒系</h3><p>中距离消耗+领域持续伤害，大招10%血量斩杀（BOSS 5%），清怪效率极高。</p></div>
-                    <div class="card"><span class="tag">T0.5</span><h3>薄荷 · A级 · 风系</h3><p>双持多段普攻，大招全队加攻，4觉拐力质变，开荒必练。</p></div>
-                </div>
-            </section>
-            <section class="section">
-                <h2 class="section-title">📘 XP抽卡指南</h2>
-                <div class="grid">
-                    <div class="card"><h3>颜值党必抽</h3><p>娜娜莉（都市御姐）、薄荷（猫耳少女）、法蒂娅（暗黑系）</p></div>
-                    <div class="card"><h3>强度党必练</h3><p>娜娜莉 + 小吱 + 早雾，开服铁三角</p></div>
-                </div>
-            </section>
-            <section class="section">
-                <h2 class="section-title">📙 进阶攻略：弧盘搭配</h2>
-                <div class="grid">
-                    <div class="card"><h3>茶花会 S级固态弧盘</h3><p>白藏专属毕业，系念暴击流核心，番外通关+世界BOSS双途径获取</p></div>
-                    <div class="card"><h3>好狗狗走四方 S级气态弧盘</h3><p>早雾毕业优选，高频充能+全队攻击增益</p></div>
-                </div>
-            </section>
+    <main class="container">
+        <div class="page-header">
+            <p class="breadcrumb"><a href="index.html">Home</a> &raquo; <span class="zh-only">角色图鉴</span><span class="en-only">Characters</span></p>
+            <h1>👤 <span class="zh-only">角色图鉴</span><span class="en-only">Character Database</span></h1>
+            <p><span class="zh-only">探索NTE中所有可玩Esper角色</span><span class="en-only">Explore all playable Esper characters.</span></p>
         </div>
-        <div id="en-content" style="display:none;">
-            <section class="hero">
-                <h1>🎯 <span>Character Archive</span> & Pull Guide</h1>
-                <p>Complete tier list, team building, relic/arc disc recommendations, ascension materials.</p>
-            </section>
-            <section class="section">
-                <h2 class="section-title">🌟 S-Rank Tier List</h2>
-                <div class="grid">
-                    <div class="card"><span class="tag">T0</span><h3>Nanally · Limited S · Spirit</h3><p>Highest crit damage, 5-hit stun, ranged lightning + AoE + ghost assist, strong at C0. Team: Nanally + Jiuyuan + Hayagiri/Mint</p></div>
-                    <div class="card"><span class="tag">T0</span><h3>Xiaozhi · Free S · Light</h3><p>Stable on-field DPS, burst surpasses Nanally on single bosses, wealth scaling.</p></div>
-                    <div class="card"><span class="tag">T0</span><h3>Shirakura · Standard S · Curse</h3><p>Mid-range + AoE DoT, 10% HP execute (5% on bosses), top-tier wave clearing.</p></div>
-                    <div class="card"><span class="tag">T0.5</span><h3>Mint · A-rank · Wind</h3><p>Multi-hit basics, team ATK buff, essential for starter teams.</p></div>
-                </div>
-            </section>
-            <section class="section">
-                <h2 class="section-title">📘 Pull Priority (Waifu/Husbando)</h2>
-                <div class="grid">
-                    <div class="card"><h3>Design Tier</h3><p>Nanally (urban elegance), Mint (cat-ear charm), Fatiya (dark allure)</p></div>
-                    <div class="card"><h3>Meta Tier</h3><p>Nanally + Xiaozhi + Hayagiri, the launch holy trinity</p></div>
-                </div>
-            </section>
-            <section class="section">
-                <h2 class="section-title">📙 Advanced: Arc Disc Builds</h2>
-                <div class="grid">
-                    <div class="card"><h3>Camellia Club S-rank Solid Arc Disc</h3><p>Shirakura's BiS, crit-focused, obtainable via side story + world boss</p></div>
-                    <div class="card"><h3>Good Dog S-rank Gas Arc Disc</h3><p>Hayagiri's best pick, fast energy recharge + team ATK buff</p></div>
-                </div>
-            </section>
+        <div class="card-grid">
+            <a href="character-detail.html" class="char-card" style="display:block;"><h3>Nanally</h3><div class="attr">Cosmos / Fire</div><p><span class="zh-only">爆发输出型火属性角色</span><span class="en-only">Burst DPS, Fire attribute.</span></p></a>
+            <a href="character-detail.html" class="char-card" style="display:block;"><h3>Daffodil</h3><div class="attr">Psyche / Wind</div><p><span class="zh-only">辅助向风属性副C</span><span class="en-only">Support-oriented Wind sub-DPS.</span></p></a>
+            <a href="character-detail.html" class="char-card" style="display:block;"><h3>Baicang</h3><div class="attr">Psyche / Incantation</div><p><span class="zh-only">咒术系主C</span><span class="en-only">Incantation main DPS.</span></p></a>
+            <a href="character-detail.html" class="char-card" style="display:block;"><h3>Adler</h3><div class="attr">Anima / Geo</div><p><span class="zh-only">岩属性护盾辅助</span><span class="en-only">Geo shield support.</span></p></a>
+            <a href="character-detail.html" class="char-card" style="display:block;"><h3>Jiuyuan</h3><div class="attr">Lakshana / Electro</div><p><span class="zh-only">雷属性高爆发输出</span><span class="en-only">Electro high burst damage.</span></p></a>
+            <a href="character-detail.html" class="char-card" style="display:block;"><h3>Mint</h3><div class="attr">Anima / Water</div><p><span class="zh-only">水属性治疗角色</span><span class="en-only">Water healer.</span></p></a>
         </div>
     </main>
-
-    <footer>
-        <p>© 2026 异环异闻带 | Nexus Hub. 游戏版权归 Hotta Studio / Perfect World 所有。</p>
-        <p>This site is a fan project and is not affiliated with NTE officials.</p>
-    </footer>
-
+    <footer><p>&copy; 2026 NTE HUB.</p></footer>
     <script>
+        (function() {
+            var savedLang = localStorage.getItem('nte-lang') || 'zh';
+            document.body.classList.remove('lang-zh', 'lang-en');
+            document.body.classList.add('lang-' + savedLang);
+        })();
+
         function toggleLang() {
-            const zh = document.getElementById('zh-content');
-            const en = document.getElementById('en-content');
-            const label = document.getElementById('langLabel');
-            if (zh.style.display === 'none') {
-                zh.style.display = 'block'; en.style.display = 'none'; label.textContent = 'EN';
+            var body = document.body;
+            if (body.classList.contains('lang-zh')) {
+                body.classList.remove('lang-zh');
+                body.classList.add('lang-en');
+                localStorage.setItem('nte-lang', 'en');
             } else {
-                zh.style.display = 'none'; en.style.display = 'block'; label.textContent = '中';
+                body.classList.remove('lang-en');
+                body.classList.add('lang-zh');
+                localStorage.setItem('nte-lang', 'zh');
             }
-            const navMap = { home: { zh: '首页', en: 'Home' }, characters: { zh: '角色', en: 'Characters' }, map: { zh: '地图', en: 'Map' }, mods: { zh: 'Mods', en: 'Mods' }, download: { zh: '下载', en: 'Download' }, about: { zh: '关于', en: 'About' }, search: { zh: '🔍', en: '🔍' } };
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                const href = link.getAttribute('href');
-                let page = href.replace('.html','');
-                if (page === 'index') page = 'home';
-                if (navMap[page]) link.textContent = zh.style.display !== 'none' ? navMap[page].zh : navMap[page].en;
-            });
         }
     </script>
 </body>

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><span class="zh-only">地图资源</span><span class="en-only">Map Resources</span> - NTE HUB</title>
-    <meta name="description" content="NTE异环海特洛市完整地图资源：隐藏宝箱位置、异常点、车辆解锁、咖啡馆收集品。">
-    <link rel="canonical" href="https://ntehub.com/map/">
+    <title><span class="zh-only">Wiki百科</span><span class="en-only">Wiki</span> - NTE HUB</title>
+    <meta name="description" content="NTE异环Wiki百科：Esper Cycle反应系统、通缉系统、车辆改装、咖啡馆经营、好感度系统等核心机制。">
+    <link rel="canonical" href="https://ntehub.com/wiki/">
     <style>
-        :root { --bg:#0D1117; --bg2:#161B22; --border:#30363D; --primary:#A259FF; --text:#E6EDF3; --text2:#8B949E; --max:1000px; }
+        :root { --bg:#0D1117; --bg2:#161B22; --border:#30363D; --primary:#A259FF; --text:#E6EDF3; --text2:#8B949E; --max:900px; }
         *{margin:0;padding:0;box-sizing:border-box;}
         body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
         a{color:var(--primary);text-decoration:none;} a:hover{text-decoration:underline;}
@@ -21,11 +21,10 @@
         .page-header{padding:40px 0 20px;text-align:center;}
         .page-header h1{font-size:2.5rem;color:var(--primary);}
         .breadcrumb{color:var(--text2);font-size:0.9rem;margin-bottom:20px;}
-        .map-placeholder{background:var(--bg2);border:2px dashed var(--border);border-radius:16px;padding:80px 20px;text-align:center;margin:40px 0;}
-        .map-placeholder p{color:var(--text2);font-size:1.2rem;}
-        .resource-list{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px;}
-        .resource-item{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:16px;}
-        .resource-item h3{color:var(--primary);}
+        .wiki-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-top:40px;}
+        .wiki-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;transition:0.2s;}
+        .wiki-card:hover{border-color:var(--primary);}
+        .wiki-card h3{color:var(--primary);margin-bottom:8px;}
         footer{background:var(--bg2);border-top:1px solid var(--border);padding:30px 20px;margin-top:60px;text-align:center;color:var(--text2);font-size:0.85rem;}
         .lang-zh .en-only{display:none;} .lang-en .zh-only{display:none;}
     </style>
@@ -36,25 +35,23 @@
             <a href="index.html" class="logo">NTE<span>HUB</span></a>
             <ul class="nav-links">
                 <li><a href="index.html"><span class="zh-only">首页</span><span class="en-only">Home</span></a></li>
-                <li><a href="map.html" class="active"><span class="zh-only">地图资源</span><span class="en-only">Map</span></a></li>
+                <li><a href="wiki.html" class="active"><span class="zh-only">Wiki</span><span class="en-only">Wiki</span></a></li>
             </ul>
             <button class="lang-switch" onclick="toggleLang()"><span class="zh-only">🌐 EN</span><span class="en-only">🌐 中文</span></button>
         </div>
     </nav>
     <main class="container">
         <div class="page-header">
-            <p class="breadcrumb"><a href="index.html">Home</a> &raquo; <span class="zh-only">地图资源</span><span class="en-only">Map</span></p>
-            <h1>🗺️ <span class="zh-only">地图资源</span><span class="en-only">Map Resources</span></h1>
-            <p><span class="zh-only">海特洛市隐藏宝箱、异常点、车辆位置一览</span><span class="en-only">Hethereau hidden chests, anomalies, vehicle locations.</span></p>
+            <p class="breadcrumb"><a href="index.html">Home</a> &raquo; <span class="zh-only">Wiki</span><span class="en-only">Wiki</span></p>
+            <h1>📖 <span class="zh-only">Wiki百科</span><span class="en-only">Wiki</span></h1>
+            <p><span class="zh-only">深入了解NTE的游戏机制与世界观</span><span class="en-only">Deep dive into NTE mechanics and lore.</span></p>
         </div>
-        <div class="map-placeholder">
-            <p>🗺️ <span class="zh-only">交互式地图即将上线，敬请期待！</span><span class="en-only">Interactive map coming soon!</span></p>
-        </div>
-        <div class="resource-list">
-            <div class="resource-item"><h3>📦 <span class="zh-only">隐藏宝箱 (32)</span><span class="en-only">Hidden Chests (32)</span></h3><p><span class="zh-only">分布在市中心、港口、郊区</span><span class="en-only">Downtown, Port, Suburbs.</span></p></div>
-            <div class="resource-item"><h3>🌀 <span class="zh-only">异常点 (12)</span><span class="en-only">Anomalies (12)</span></h3><p><span class="zh-only">击败后获得高额奖励</span><span class="en-only">Defeat for high rewards.</span></p></div>
-            <div class="resource-item"><h3>🚗 <span class="zh-only">车辆解锁 (8)</span><span class="en-only">Vehicle Unlocks (8)</span></h3><p><span class="zh-only">完成任务或挑战获得</span><span class="en-only">Complete missions or challenges.</span></p></div>
-            <div class="resource-item"><h3>☕ <span class="zh-only">咖啡馆收集品 (5)</span><span class="en-only">Cafe Collections (5)</span></h3><p><span class="zh-only">经营咖啡馆解锁特殊奖励</span><span class="en-only">Cafe management unlocks special rewards.</span></p></div>
+        <div class="wiki-grid">
+            <div class="wiki-card"><h3>⚡ <span class="zh-only">Esper Cycle反应</span><span class="en-only">Esper Cycle</span></h3><p><span class="zh-only">四种属性相互克制与增益，触发元素反应造成额外伤害</span><span class="en-only">Four attributes counter and buff each other, triggering elemental reactions.</span></p></div>
+            <div class="wiki-card"><h3>🚔 <span class="zh-only">通缉系统</span><span class="en-only">Wanted System</span></h3><p><span class="zh-only">类似GTA的星通缉系统，躲避警察或正面交战</span><span class="en-only">GTA-style wanted level system, evade or fight police.</span></p></div>
+            <div class="wiki-card"><h3>🚗 <span class="zh-only">车辆改装</span><span class="en-only">Vehicle Customization</span></h3><p><span class="zh-only">自由改装车辆外观与性能，参与街头竞速</span><span class="en-only">Customize vehicle appearance and performance, participate in street races.</span></p></div>
+            <div class="wiki-card"><h3>☕ <span class="zh-only">咖啡馆经营</span><span class="en-only">Cafe Management</span></h3><p><span class="zh-only">经营自己的咖啡馆，解锁角色剧情与特殊奖励</span><span class="en-only">Manage your cafe, unlock character stories and rewards.</span></p></div>
+            <div class="wiki-card"><h3>❤️ <span class="zh-only">好感度系统</span><span class="en-only">Affection System</span></h3><p><span class="zh-only">提升与角色的好感度，解锁专属对话和剧情</span><span class="en-only">Raise affection levels to unlock exclusive dialogues and stories.</span></p></div>
         </div>
     </main>
     <footer><p>&copy; 2026 NTE HUB.</p></footer>

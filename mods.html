@@ -3,150 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mod教程与排行榜 - 异环异闻带</title>
-    <link rel="canonical" href="https://www.nte-hub.com/mods.html">
+    <title><span class="zh-only">NTE Mod中心 - 异环MOD推荐排行 & 安装教程</span><span class="en-only">NTE Mod Center - Rankings & Tutorial</span></title>
+    <meta name="description" content="NTE HUB Mod中心提供异环最新Mod推荐、每周热门排行、详细安装教程及常见问题解答。引导至GameBanana和AyakaMods官方下载。">
+    <link rel="canonical" href="https://ntehub.com/mods/">
     <style>
-        :root { --bg: #f5f5f7; --card-bg: #ffffff; --text: #1d1d1f; --text-secondary: #86868b; --accent: #0071e3; --accent-hover: #0077ed; --border: #d2d2d7; --radius: 18px; --shadow: 0 2px 12px rgba(0,0,0,0.04); }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "Helvetica Neue", sans-serif; background: var(--bg); color: var(--text); line-height:1.5; min-height:100vh; display:flex; flex-direction:column; }
-        a { text-decoration:none; color: var(--accent); }
-        .navbar { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; background: rgba(255,255,255,0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; flex-wrap:wrap; gap:1rem; }
-        .logo { font-size:1.4rem; font-weight:700; color:var(--text); letter-spacing: -0.5px; }
-        .logo span { color: var(--accent); }
-        .nav-links { display:flex; gap:1.2rem; align-items:center; flex-wrap:wrap; }
-        .nav-links a { color:var(--text-secondary); font-weight:500; font-size:0.95rem; padding:0.3rem 0; border-bottom:2px solid transparent; transition:0.2s; }
-        .nav-links a:hover, .nav-links a.active { color:var(--text); border-bottom-color:var(--accent); }
-        .lang-btn { background:var(--card-bg); border:1px solid var(--border); padding:0.5rem 1.2rem; border-radius:30px; cursor:pointer; font-weight:500; font-size:0.9rem; color:var(--text); display:flex; align-items:center; gap:0.3rem; transition:0.2s; }
-        .lang-btn:hover { border-color:var(--accent); color:var(--accent); }
-        .hero { text-align:center; padding:3rem 2rem; }
-        .hero h1 { font-size:2.5rem; font-weight:700; color:var(--text); margin-bottom:1rem; }
-        .hero h1 span { color: var(--accent); }
-        .hero p { color:var(--text-secondary); font-size:1.2rem; max-width:600px; margin:0 auto 2rem; }
-        .btn { background:var(--accent); color:#fff; border:none; padding:0.85rem 2.5rem; border-radius:40px; font-weight:600; font-size:1rem; cursor:pointer; display:inline-block; transition:0.2s; }
-        .btn:hover { background:var(--accent-hover); }
-        .btn-secondary { background:var(--card-bg); color:var(--accent); border:1px solid var(--accent); }
-        .btn-secondary:hover { background:var(--accent); color:#fff; }
-        .section { max-width:1100px; margin:0 auto 3rem; padding:0 1.5rem; }
-        .section-title { font-size:1.8rem; font-weight:700; margin-bottom:1.5rem; padding-left:1rem; border-left:4px solid var(--accent); }
-        .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; }
-        .card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow); transition:0.2s; }
-        .card:hover { border-color:var(--accent); transform:translateY(-2px); }
-        .card h3 { font-size:1.2rem; margin-bottom:0.5rem; }
-        .card p { color:var(--text-secondary); font-size:0.95rem; }
-        .tag { background: var(--accent); color:#fff; font-size:0.7rem; font-weight:700; padding:0.2rem 0.7rem; border-radius:20px; display:inline-block; margin-bottom:0.8rem; }
-        .steps { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:1.5rem; }
-        .step-card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; box-shadow:var(--shadow); text-align:center; }
-        .step-num { background:var(--accent); color:#fff; width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:700; font-size:1.1rem; margin-bottom:0.8rem; }
-        footer { margin-top:auto; text-align:center; padding:2rem; border-top:1px solid var(--border); color:var(--text-secondary); font-size:0.85rem; }
-        @media (max-width: 640px) { .hero h1 { font-size:2rem; } .navbar { padding:1rem; } .nav-links { gap:0.8rem; } }
+        :root { --bg:#0D1117; --bg2:#161B22; --border:#30363D; --primary:#A259FF; --gold:#F59E0B; --text:#E6EDF3; --text2:#8B949E; --max:1200px; }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+        a{color:var(--primary);text-decoration:none;} a:hover{text-decoration:underline;}
+        nav{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000;}
+        .nav-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:64px;}
+        .logo{font-size:1.8rem;font-weight:800;color:var(--primary);} .logo span{color:var(--text);font-weight:400;}
+        .nav-links{display:flex;gap:20px;list-style:none;} .nav-links a{color:var(--text2);font-size:0.95rem;}
+        .nav-links a:hover,.nav-links a.active{color:var(--primary);text-decoration:none;}
+        .lang-switch{background:var(--border);border:1px solid var(--border);color:var(--text);padding:8px 16px;border-radius:20px;cursor:pointer;font-size:0.85rem;}
+        .lang-switch:hover{border-color:var(--primary);color:var(--primary);}
+        .container{max-width:var(--max);margin:0 auto;padding:20px;}
+        .page-header{padding:40px 0 20px;text-align:center;}
+        .page-header h1{font-size:2.5rem;color:var(--primary);}
+        .breadcrumb{color:var(--text2);font-size:0.9rem;margin-bottom:20px;}
+        .sub-nav{display:flex;gap:12px;justify-content:center;margin-bottom:40px;flex-wrap:wrap;}
+        .sub-nav a{padding:10px 24px;border:1px solid var(--border);border-radius:25px;color:var(--text2);transition:all 0.2s;}
+        .sub-nav a:hover,.sub-nav a.active{background:var(--primary);border-color:var(--primary);color:#fff;text-decoration:none;}
+        .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-bottom:40px;}
+        .mod-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all 0.3s;}
+        .mod-card:hover{border-color:var(--primary);transform:translateY(-4px);}
+        .mod-card-header{padding:20px 20px 0;}
+        .platform-badge{display:inline-block;padding:4px 10px;border-radius:10px;font-size:0.75rem;font-weight:700;margin-bottom:8px;}
+        .platform-gb{background:#FFD700;color:#000;} .platform-ayaka{background:#FF69B4;color:#fff;}
+        .mod-card h3{font-size:1.1rem;margin:8px 0;}
+        .mod-card p{color:var(--text2);font-size:0.9rem;padding:0 20px;}
+        .mod-card-footer{padding:16px 20px 20px;display:flex;justify-content:space-between;align-items:center;}
+        .download-btn{display:inline-block;padding:8px 20px;background:var(--primary);color:#fff;border-radius:20px;font-size:0.85rem;font-weight:600;}
+        .download-btn:hover{background:#8B3FEF;text-decoration:none;}
+        .meta{color:var(--text2);font-size:0.8rem;}
+        section{margin:60px 0;}
+        .section-title{font-size:1.8rem;font-weight:700;margin-bottom:32px;padding-bottom:12px;border-bottom:2px solid var(--primary);display:inline-block;}
+        .ranking-table{width:100%;border-collapse:collapse;}
+        .ranking-table th,.ranking-table td{padding:16px;text-align:left;border-bottom:1px solid var(--border);}
+        .ranking-table th{color:var(--text2);font-weight:600;font-size:0.85rem;}
+        .rank-num{font-size:1.5rem;font-weight:800;color:var(--primary);width:60px;}
+        .rank-1{color:var(--gold);} .rank-2{color:#C0C0C0;} .rank-3{color:#CD7F32;}
+        footer{background:var(--bg2);border-top:1px solid var(--border);padding:30px 20px;margin-top:60px;text-align:center;color:var(--text2);font-size:0.85rem;}
+        .lang-zh .en-only{display:none;} .lang-en .zh-only{display:none;}
     </style>
 </head>
-<body>
-    <nav class="navbar">
-        <div class="logo">🔮 <span>异闻带</span> Nexus Hub</div>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">首页</a>
-            <a href="characters.html">角色</a>
-            <a href="map.html">地图</a>
-            <a href="mods.html" class="active">Mods</a>
-            <a href="download.html">下载</a>
-            <a href="about.html">关于</a>
-            <a href="search.html">🔍</a>
+<body class="lang-zh">
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">NTE<span>HUB</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html"><span class="zh-only">首页</span><span class="en-only">Home</span></a></li>
+                <li><a href="mods.html" class="active"><span class="zh-only">Mod中心</span><span class="en-only">Mods</span></a></li>
+            </ul>
+            <button class="lang-switch" onclick="toggleLang()"><span class="zh-only">🌐 EN</span><span class="en-only">🌐 中文</span></button>
         </div>
-        <button class="lang-btn" onclick="toggleLang()">🌐 <span id="langLabel">EN</span></button>
     </nav>
 
-    <main>
-        <div id="zh-content">
-            <section class="hero">
-                <h1>🎨 <span>Mod工坊</span></h1>
-                <p>从安装教程到每周热门排行，一站式玩转NTE角色皮肤与服装Mod。</p>
-                <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-                    <a href="https://www.nexusmods.com/nevernesstoeverness" class="btn" target="_blank">Nexus Mods 官方平台</a>
-                    <a href="https://gamebanana.com/games/neverness-to-everness" class="btn btn-secondary" target="_blank">GameBanana 社区</a>
-                </div>
-            </section>
-            <section class="section">
-                <h2 class="section-title">📥 三步安装教程</h2>
-                <div class="steps">
-                    <div class="step-card"><span class="step-num">1</span><h3>下载Mod加载器</h3><p>安装 <strong>NEMIx3DMIGOTO NTE MOD loader</strong>（定制版3Dmigoto）或 <strong>QAQ管理器V4.7</strong>（一键安装，支持DX11/DX12）</p></div>
-                    <div class="step-card"><span class="step-num">2</span><h3>放置Mod文件</h3><p>将下载的 <strong>.pak</strong> 文件放入游戏目录下的 <strong>~mods</strong> 文件夹中</p></div>
-                    <div class="step-card"><span class="step-num">3</span><h3>启动游戏</h3><p>先运行加载器（或QAQ管理器），再启动NTE。部分Mod需要 <strong>AyakaNTEBypasser</strong> 绕过签名验证</p></div>
-                </div>
-            </section>
-            <section class="section">
-                <h2 class="section-title">🔥 本周热门Mod排行榜</h2>
-                <div class="grid">
-                    <div class="card"><span class="tag">TOP1</span><h3>薄荷长发物理优化</h3><p>发丝飘动更自然，下载量破万</p></div>
-                    <div class="card"><span class="tag">TOP2</span><h3>娜娜莉都市时装</h3><p>替换默认皮肤为时尚夜行装</p></div>
-                    <div class="card"><span class="tag">TOP3</span><h3>反虚化/隐藏UID</h3><p>QAQ管理器内置功能，截图党必备</p></div>
-                </div>
-            </section>
-            <section class="section">
-                <h2 class="section-title">❓ 常见问题</h2>
-                <div class="grid">
-                    <div class="card"><h3>Mod安装后无效？</h3><p>检查加载器版本是否匹配，确认.pak文件在 ~mods 路径下。如使用DX12，需安装DX12加载器前置。</p></div>
-                    <div class="card"><h3>Mod会导致封号吗？</h3><p>仅替换本地模型文件，不涉及数据篡改，目前无封号报告。但使用前请备份游戏文件，风险自负。</p></div>
-                </div>
-            </section>
+    <main class="container">
+        <div class="page-header">
+            <p class="breadcrumb"><a href="index.html">Home</a> &raquo; <span class="zh-only">Mod中心</span><span class="en-only">Mods</span></p>
+            <h1>🎨 <span class="zh-only">Mod中心</span><span class="en-only">Mod Center</span></h1>
+            <p><span class="zh-only">发现最棒的NTE Mod——角色皮肤、服装替换、角色模型Mod，每周更新推荐</span><span class="en-only">Discover the best NTE Mods - character skins, outfit replacements, model swaps. Updated weekly.</span></p>
         </div>
-        <div id="en-content" style="display:none;">
-            <section class="hero">
-                <h1>🎨 <span>Mod Workshop</span></h1>
-                <p>From install guides to weekly trending mods — all you need for NTE skins & outfits.</p>
-                <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-                    <a href="https://www.nexusmods.com/nevernesstoeverness" class="btn" target="_blank">Nexus Mods</a>
-                    <a href="https://gamebanana.com/games/neverness-to-everness" class="btn btn-secondary" target="_blank">GameBanana</a>
+        <nav class="sub-nav">
+            <a href="mods.html" class="active"><span class="zh-only">🏠 Mod首页</span><span class="en-only">🏠 Mod Home</span></a>
+            <a href="mod-rankings.html"><span class="zh-only">🔥 热门排行</span><span class="en-only">🔥 Rankings</span></a>
+            <a href="mod-tutorial.html"><span class="zh-only">📖 安装教程</span><span class="en-only">📖 Install Guide</span></a>
+            <a href="mod-faq.html"><span class="zh-only">❓ 常见问题</span><span class="en-only">❓ FAQ</span></a>
+        </nav>
+
+        <section>
+            <h2 class="section-title"><span class="zh-only">🔥 热门Mod</span><span class="en-only">🔥 Trending Mods</span></h2>
+            <div class="card-grid">
+                <div class="mod-card">
+                    <div class="mod-card-header"><span class="platform-badge platform-ayaka">AyakaMods</span><h3>Mint Swimsuit Skin</h3></div>
+                    <p><span class="zh-only">将Mint默认服装替换为泳装外观，粉红条纹比基尼，正常游玩即可显示。含棕色皮肤变体。</span><span class="en-only">Replaces Mint's default outfit with swimsuit. Pink striped bikini during normal gameplay. Brown skin variant included.</span></p>
+                    <div class="mod-card-footer"><span class="meta">v1.00 · 2026-05-03</span><a href="https://ayakamods.com/neverness-to-everness/mods/mint-swimsuit" target="_blank" rel="noopener" class="download-btn"><span class="zh-only">⬇ 下载</span><span class="en-only">⬇ Download</span></a></div>
                 </div>
-            </section>
-            <section class="section">
-                <h2 class="section-title">📥 3-Step Installation</h2>
-                <div class="steps">
-                    <div class="step-card"><span class="step-num">1</span><h3>Download Mod Loader</h3><p>Install <strong>NEMIx3DMIGOTO NTE MOD loader</strong> or <strong>QAQ Manager V4.7</strong> (supports DX11/DX12)</p></div>
-                    <div class="step-card"><span class="step-num">2</span><h3>Place Mod Files</h3><p>Put <strong>.pak</strong> files into the <strong>~mods</strong> folder in your game directory</p></div>
-                    <div class="step-card"><span class="step-num">3</span><h3>Launch Game</h3><p>Run the loader first, then start NTE. Some mods need <strong>AyakaNTEBypasser</strong> for signature bypass</p></div>
+                <div class="mod-card">
+                    <div class="mod-card-header"><span class="platform-badge platform-ayaka">AyakaMods</span><h3>Nanally Cute Clothes (Bear)</h3></div>
+                    <p><span class="zh-only">Nanally可爱小熊服装Mod，萌系小熊套装替换默认服装。由玩家社区制作。</span><span class="en-only">Cute bear-themed outfit mod for Nanally. Community-made.</span></p>
+                    <div class="mod-card-footer"><span class="meta">v1.0 · 2026-05-06</span><a href="https://ayakamods.com/neverness-to-everness/mods/nanally-cute-clothes" target="_blank" rel="noopener" class="download-btn"><span class="zh-only">⬇ 下载</span><span class="en-only">⬇ Download</span></a></div>
                 </div>
-            </section>
-            <section class="section">
-                <h2 class="section-title">🔥 Weekly Trending</h2>
-                <div class="grid">
-                    <div class="card"><span class="tag">TOP1</span><h3>Mint Long Hair Physics</h3><p>Enhanced hair physics, 10k+ downloads</p></div>
-                    <div class="card"><span class="tag">TOP2</span><h3>Nanally Urban Outfit</h3><p>Replaces default skin with stylish night look</p></div>
-                    <div class="card"><span class="tag">TOP3</span><h3>Censorship Remover / Hide UID</h3><p>Built into QAQ Manager, essential for screenshots</p></div>
+                <div class="mod-card">
+                    <div class="mod-card-header"><span class="platform-badge platform-ayaka">AyakaMods</span><h3>Tartaglia (Childe) as Baicang</h3></div>
+                    <p><span class="zh-only">将Baicang角色模型替换为《原神》达达利亚，英文配音完美匹配，非常自然。</span><span class="en-only">Replaces Baicang with Tartaglia from Genshin Impact. English VA match.</span></p>
+                    <div class="mod-card-footer"><span class="meta">v1.0 · 2026-05-05</span><a href="https://ayakamods.com/neverness-to-everness/mods/tartaglia-baicang" target="_blank" rel="noopener" class="download-btn"><span class="zh-only">⬇ 下载</span><span class="en-only">⬇ Download</span></a></div>
                 </div>
-            </section>
-            <section class="section">
-                <h2 class="section-title">❓ FAQ</h2>
-                <div class="grid">
-                    <div class="card"><h3>Mod not working?</h3><p>Check loader version, ensure .pak files are in ~mods. For DX12, install the DX12 loader prerequisite.</p></div>
-                    <div class="card"><h3>Will mods get me banned?</h3><p>Mods only replace local files, no data tampering. No ban reports so far, but always back up your files. Use at your own risk.</p></div>
+                <div class="mod-card">
+                    <div class="mod-card-header"><span class="platform-badge platform-ayaka">AyakaMods</span><h3>AyakaNTEBypasser</h3></div>
+                    <p><span class="zh-only">轻量级运行时补丁，绕过NTE签名验证，大多数Mod必需的前置工具。</span><span class="en-only">Lightweight runtime patcher that neutralises NTE's signature verification. Required for most mods.</span></p>
+                    <div class="mod-card-footer"><span class="meta">v1.0a · 2026-05-03</span><a href="https://ayakamods.com/neverness-to-everness/mods/ayakantebypasser" target="_blank" rel="noopener" class="download-btn"><span class="zh-only">⬇ 下载</span><span class="en-only">⬇ Download</span></a></div>
                 </div>
-            </section>
-        </div>
+                <div class="mod-card">
+                    <div class="mod-card-header"><span class="platform-badge platform-gb">GameBanana</span><h3>NTE Mod Loader</h3></div>
+                    <p><span class="zh-only">NTE专用Mod加载器，3DMigoto风格工具包。GameBanana上最全面的NTE Mod基础工具。</span><span class="en-only">NTE-specific mod loader, 3DMigoto-style toolkit. Most comprehensive base tool on GameBanana.</span></p>
+                    <div class="mod-card-footer"><span class="meta">v2.1 · 2026-05-01</span><a href="https://gamebanana.com/" target="_blank" rel="noopener" class="download-btn"><span class="zh-only">⬇ 前往下载</span><span class="en-only">⬇ Go to Download</span></a></div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--bg2); border:1px solid var(--border); border-radius:12px; padding:32px;">
+            <h2 class="section-title"><span class="zh-only">📥 Mod下载官方渠道</span><span class="en-only">📥 Official Mod Download Sources</span></h2>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px;">
+                <div>
+                    <h3 style="color:#FFD700;">GameBanana</h3>
+                    <p style="color:var(--text2); margin:8px 0;"><span class="zh-only">全球最大的Mod社区之一，NTE Mod专区正在快速增长。</span><span class="en-only">One of the largest mod communities. NTE section growing fast.</span></p>
+                    <a href="https://gamebanana.com/" target="_blank" rel="noopener" class="btn" style="display:inline-block; padding:10px 24px; background:var(--primary); color:#fff; border-radius:25px; font-weight:600;"><span class="zh-only">前往 GameBanana →</span><span class="en-only">Go to GameBanana →</span></a>
+                </div>
+                <div>
+                    <h3 style="color:#FF69B4;">AyakaMods</h3>
+                    <p style="color:var(--text2); margin:8px 0;"><span class="zh-only">NTE Mod核心平台，提供签名绕过工具和大量角色皮肤Mod。</span><span class="en-only">Core NTE Mod platform, provides bypass tool and many skin mods.</span></p>
+                    <a href="https://ayakamods.com/" target="_blank" rel="noopener" class="btn" style="display:inline-block; padding:10px 24px; background:var(--primary); color:#fff; border-radius:25px; font-weight:600;"><span class="zh-only">前往 AyakaMods →</span><span class="en-only">Go to AyakaMods →</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title"><span class="zh-only">📊 本周热门排行 TOP 5</span><span class="en-only">📊 This Week's Top 5</span></h2>
+            <table class="ranking-table">
+                <thead><tr><th>#</th><th><span class="zh-only">Mod名称</span><span class="en-only">Mod Name</span></th><th><span class="zh-only">类型</span><span class="en-only">Type</span></th><th><span class="zh-only">平台</span><span class="en-only">Platform</span></th><th><span class="zh-only">热度</span><span class="en-only">Hot</span></th></tr></thead>
+                <tbody>
+                    <tr><td class="rank-num rank-1">1</td><td>Mint Swimsuit Skin</td><td><span class="zh-only">皮肤替换</span><span class="en-only">Skin</span></td><td>AyakaMods</td><td>🔥🔥🔥🔥🔥</td></tr>
+                    <tr><td class="rank-num rank-2">2</td><td>AyakaNTEBypasser</td><td><span class="zh-only">工具</span><span class="en-only">Tool</span></td><td>AyakaMods</td><td>🔥🔥🔥🔥🔥</td></tr>
+                    <tr><td class="rank-num rank-3">3</td><td>NTE Mod Loader</td><td><span class="zh-only">工具</span><span class="en-only">Tool</span></td><td>GameBanana</td><td>🔥🔥🔥🔥</td></tr>
+                    <tr><td class="rank-num">4</td><td>Nanally Cute Clothes</td><td><span class="zh-only">皮肤替换</span><span class="en-only">Skin</span></td><td>AyakaMods</td><td>🔥🔥🔥🔥</td></tr>
+                    <tr><td class="rank-num">5</td><td>Tartaglia as Baicang</td><td><span class="zh-only">角色替换</span><span class="en-only">Model Swap</span></td><td>AyakaMods</td><td>🔥🔥🔥</td></tr>
+                </tbody>
+            </table>
+            <div style="text-align:center; margin-top:24px;">
+                <a href="mod-rankings.html" class="btn" style="display:inline-block; padding:12px 28px; border:2px solid var(--primary); color:var(--primary); border-radius:25px; font-weight:600;"><span class="zh-only">查看完整排行 →</span><span class="en-only">View Full Rankings →</span></a>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <p>© 2026 异环异闻带 | Nexus Hub. 游戏版权归 Hotta Studio / Perfect World 所有。</p>
-        <p>This site is a fan project and is not affiliated with NTE officials.</p>
-    </footer>
+    <footer><p>&copy; 2026 NTE HUB. <span class="zh-only">本站为玩家自制内容站，Mod版权归原作者所有。</span><span class="en-only">Fan site. Mod copyrights belong to their authors.</span></p></footer>
 
     <script>
+        (function() {
+            var savedLang = localStorage.getItem('nte-lang') || 'zh';
+            document.body.classList.remove('lang-zh', 'lang-en');
+            document.body.classList.add('lang-' + savedLang);
+        })();
+
         function toggleLang() {
-            const zh = document.getElementById('zh-content');
-            const en = document.getElementById('en-content');
-            const label = document.getElementById('langLabel');
-            if (zh.style.display === 'none') {
-                zh.style.display = 'block'; en.style.display = 'none'; label.textContent = 'EN';
+            var body = document.body;
+            if (body.classList.contains('lang-zh')) {
+                body.classList.remove('lang-zh');
+                body.classList.add('lang-en');
+                localStorage.setItem('nte-lang', 'en');
             } else {
-                zh.style.display = 'none'; en.style.display = 'block'; label.textContent = '中';
+                body.classList.remove('lang-en');
+                body.classList.add('lang-zh');
+                localStorage.setItem('nte-lang', 'zh');
             }
-            const navMap = { home: { zh: '首页', en: 'Home' }, characters: { zh: '角色', en: 'Characters' }, map: { zh: '地图', en: 'Map' }, mods: { zh: 'Mods', en: 'Mods' }, download: { zh: '下载', en: 'Download' }, about: { zh: '关于', en: 'About' }, search: { zh: '🔍', en: '🔍' } };
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                const href = link.getAttribute('href');
-                let page = href.replace('.html','');
-                if (page === 'index') page = 'home';
-                if (navMap[page]) link.textContent = zh.style.display !== 'none' ? navMap[page].zh : navMap[page].en;
-            });
         }
     </script>
 </body>

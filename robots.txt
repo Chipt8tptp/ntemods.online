@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://ntehub.com/sitemap.xml
+Disallow: /assets/
+Disallow: /cgi-bin/
